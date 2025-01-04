@@ -1369,12 +1369,17 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.8em;
+		font-size: 2.8em;
 		letter-spacing: -0.015em;
 		padding-bottom: 1rem;
 	}
 
-	h3, h4, h5, h6 {
+	h3 {
+		font-size: 1.75em;
+		padding-bottom: 1rem;
+	}
+	
+	h4, h5, h6 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
 	}
@@ -1540,11 +1545,15 @@ input, select, textarea {
 		}
 
 /* Image */
+	img.profileImage {
+			width: 30%;
+			height: auto;
+			float: right;
+		}
 
 	.image {
 		display: inline-block;
 	}
-
 		.image img {
 			display: block;
 			width: 100%;
@@ -1680,6 +1689,7 @@ input, select, textarea {
 	ul {
 		list-style: disc;
 		padding-left: 1em;
+		margin-left: 1rem;
 	}
 
 		ul li {
@@ -1869,7 +1879,7 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		width: 45em;
+		width: 50em;
 		margin: 0 auto;
 		min-height: 100vh;
 		max-width: 100%;
@@ -1980,15 +1990,15 @@ input, select, textarea {
 				display: -webkit-flex;
 				display: -ms-flex;
 				display: flex;
-				padding: 1em;
+				padding: 1em 2em;
 				-moz-flex-direction: row;
 				-webkit-flex-direction: row;
 				-ms-flex-direction: row;
 				flex-direction: row;
-				-moz-align-items: center;
-				-webkit-align-items: center;
-				-ms-align-items: center;
-				align-items: center;
+				-moz-align-items: left;
+				-webkit-align-items: left;
+				-ms-align-items: left;
+				align-items: left;
 				flex-wrap: wrap;
 			}
 
@@ -2114,8 +2124,8 @@ input, select, textarea {
 						}
 
 						#main > .panel.intro header {
-							padding: 4em;
-							text-align: center;
+							padding: 2em;
+							text-align: left;
 						}
 
 				}
