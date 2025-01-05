@@ -67,7 +67,10 @@ input, select, textarea {
 }
 
 /* Row */
-
+	row.work {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.row {
 		display: flex;
 		flex-wrap: wrap;
@@ -1584,7 +1587,14 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
-
+	img.project {
+			display: grid;
+			justify-self: center;
+			width: 90%;
+			height: auto;
+			border: 1px solid #d8d8d8;
+			margin-bottom: 1.2em;
+		}
 /* Button */
 
 	input[type="button"],
