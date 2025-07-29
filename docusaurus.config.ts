@@ -11,7 +11,7 @@ const projectName = "tetrabor.github.io";
 
 const config: Config = {
   title: 'Welcome to My Portfolio',
-  tagline: 'We Build In Code',
+  tagline: 'We Write In Code',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
