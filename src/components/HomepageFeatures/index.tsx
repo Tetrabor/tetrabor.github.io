@@ -11,50 +11,78 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: (
+      <a href="/docs/resume" style={{ textDecoration: 'none', color: 'inherit' }}>
+        Resume
+      </a>
+    ),
+    link: '/docs/resume',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <p>View my full professional resume, including work history, tools, and certifications.</p>
+        <a className="button button--primary" href="/docs/resume">
+          View Resume
+        </a>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Portfolio',
+    link: '/docs/portfolio',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <p>Discover my previous works.</p>
+        <a className="button button--primary" href="/docs/resume">
+          View Portfolio
+        </a>
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Contact',
+    link: '/docs/contact',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <p>Find the best way to connect with me!</p>
+          <a className="button button--primary" href="/docs/resume">
+          View Contact Page
+        </a>
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, link, Svg, description, }: FeatureItem & { link?: string }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {link ? (
+          <a href={link}>
+            <Svg className={styles.featureSvg} role="img" />
+          </a>
+        ) : (
+          <Svg className={styles.featureSvg} role="img" />
+        )}
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <h3>
+          {link ? (
+            <a href={link} style={{ textDecoration: 'none', color: 'inherit' }}>
+              {title}
+            </a>
+          ) : (
+            title
+          )}
+        </h3>
         <p>{description}</p>
       </div>
     </div>
   );
 }
+
 
 export default function HomepageFeatures(): ReactNode {
   return (

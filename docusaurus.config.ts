@@ -71,6 +71,24 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
+    metadata: [
+      {name: 'keywords', content: 'Michael Sheleman, sheleman, resume, portolfio'},
+    ],
+    headTags: [
+      // Declare some json-ld structured data
+      {
+        tagName: 'script',
+        attributes: {
+          type: 'application/ld+json',
+        },
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org/',
+          '@type': 'ProfilePage',
+          name: "Michael Sheleman's Resume and Portfolio",
+          url: 'https://msheleman.com/',
+        }),
+      },
+    ],
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: "Michael Sheleman's Portfolio",
@@ -79,18 +97,10 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Portfolio',
-        },
+        {to: '/docs/Resume', label: 'Resume', position: 'left'},
+        {to: '/docs/Portfolio', label: 'Portfolio', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/Tetrabor',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {to: '/docs/Contact', label: 'Contact', position: 'right'},
       ],
     },
     footer: {
