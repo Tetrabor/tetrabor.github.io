@@ -11,11 +11,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: (
-      <a href="/docs/resume" style={{ textDecoration: 'none', color: 'inherit' }}>
-        Resume
-      </a>
-    ),
+    title: 'Resume',
     link: '/docs/resume',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
@@ -34,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         <p>Discover my previous works.</p>
-        <a className="button button--primary" href="/docs/resume">
+        <a className="button button--primary" href="/docs/portfolio">
           View Portfolio
         </a>
       </>
@@ -47,7 +43,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         <p>Find the best way to connect with me.</p>
-          <a className="button button--primary" href="/docs/resume">
+          <a className="button button--primary" href="/docs/contact">
           View Contact Page
         </a>
       </>
