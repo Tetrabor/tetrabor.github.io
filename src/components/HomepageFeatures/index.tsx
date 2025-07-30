@@ -46,7 +46,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        <p>Find the best way to connect with me!</p>
+        <p>Find the best way to connect with me.</p>
           <a className="button button--primary" href="/docs/resume">
           View Contact Page
         </a>
