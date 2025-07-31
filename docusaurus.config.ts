@@ -11,7 +11,7 @@ const projectName = "tetrabor.github.io";
 
 const config: Config = {
   title: 'Michael Sheleman',
-  tagline: 'Welcome to My Portfolio',
+  tagline: 'Senior Technical Writer | SaaS | APIs | AI Ready',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -94,7 +94,7 @@ const config: Config = {
       title: "Michael Sheleman's Portfolio",
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/michaelShelemanBig.png',
       },
       items: [
         {to: '/docs/Resume', label: 'Resume', position: 'left'},

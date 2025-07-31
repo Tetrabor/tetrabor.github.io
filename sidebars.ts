@@ -30,4 +30,5 @@ const sidebars: SidebarsConfig = {
    */
 };
 
+
 export default sidebars;

@@ -13,7 +13,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Resume',
     link: '/docs/resume',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/resume.svg').default,
     description: (
       <>
         <p>View my full professional resume, including work history, tools, and certifications.</p>
@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Portfolio',
     link: '/docs/portfolio',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/portfolio.svg').default,
     description: (
       <>
         <p>Discover my previous works.</p>
@@ -39,7 +39,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Contact',
     link: '/docs/contact',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/contact.svg').default,
     description: (
       <>
         <p>Find the best way to connect with me.</p>

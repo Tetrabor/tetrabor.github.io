@@ -4,14 +4,45 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.heroText {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.heroImage {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 0 6rem 0 0;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem; /* optional styling */
 }
 
 @media screen and (max-width: 996px) {
-  .heroBanner {
+  .heroBanner, .heroImage {
     padding: 2rem;
   }
 }

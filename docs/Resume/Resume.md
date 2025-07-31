@@ -10,14 +10,14 @@
 </div>
 
 ---
-### Sumary
+### Summary {#summary}
 Accomplished Technical Writer with six years of experience producing clear,
 concise, and user-centric documentation for SaaS platforms. Adept at creating
 API documentation, conceptual guides, and procedural manuals while ensuring
 compliance with modern accessibility standards. Proven ability to streamline
 documentation processes and collaborate effectively with cross-functional teams.
 
-### Experience
+### Experience {#experience}
 
 ---
 #### Senior Technical Writer
@@ -52,7 +52,7 @@ content accessibility.
 - Crafted engaging blogs and marketing content that increased brand visibility
 and customer engagement for clients in gaming and tech.
 
-### Education
+### Education {#education}
 
 ---
 - Certified Professional Technical Communicator (CPTC™) Foundation | 2021
@@ -61,7 +61,7 @@ and customer engagement for clients in gaming and tech.
 
 ---
 
-### Skills
+### Skills {#skills}
 - Documentation Lifecycle Management: End-to-end process from research to publication
 - Project Management Tools: JIRA, Confluence, Asana, Trello
 - Design & Editing Tools: Photoshop, Paintshop, Snagit, Madcap Flare, Zendesk, 
