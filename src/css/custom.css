@@ -28,3 +28,31 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.image {
+  border: 1px solid var(--ifm-color-primary-lightest);
+  border-radius: 4px;
+}
+
+.width90 {
+  max-width: 90%;
+  height: auto;
+}
+
+.width80 {
+  max-width: 80%;
+  height: auto;
+}
+
+.center {
+  display: block; /* Images are inline by default, make it block-level */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-project {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1em; /* 1em gap between the two columns */
+  justify-items: start; /* ensures content in each column is left-aligned */
+}

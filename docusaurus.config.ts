@@ -42,12 +42,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/${organizationName}/${projectName}/tree/main/',
         },
-        blog: {
+        /* blog: {
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -61,7 +57,7 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-        },
+        }, */
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -99,40 +95,23 @@ const config: Config = {
       items: [
         {to: '/docs/Resume', label: 'Resume', position: 'left'},
         {to: '/docs/Portfolio', label: 'Portfolio', position: 'left'},
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/docs/Contact', label: 'Contact', position: 'right'},
+        /* {to: '/blog', label: 'Blog', position: 'left'}, */
+        {to: '/docs/Contact', label: 'Contact', position: 'left'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Community',
+          title: 'Contact',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/in/sheleman/',
             },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
+           {
               label: 'GitHub',
-              href: 'https://github.com/Tetrabor',
+              href: 'https://github.com/Tetrabor/',
             },
           ],
         },
