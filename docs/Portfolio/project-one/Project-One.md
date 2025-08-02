@@ -9,7 +9,7 @@
 **Article Link**: https://docs.unqork.io/Content/A00-Unqork_Platform/A00506-BYO-Component.htm  
 **Article Type**: Conceptual  
 **Target Audience**: JavaScript Developers  
-**Platform**: <a href="https://unqork.com/"  target="_blank">Unqork software platform</a>, a SaaS (Software as a Service) product designed to create no-code web applications for financial technology companies.   
+**Platform**: <a href="https://unqork.com/"  target="_blank">Unqork software platform</a>, a SaaS (Software as a Service) product designed to create no-code web applications for financial technology companies.     
 **About**: This article details a new feature that enables javascript developers to create their own components for use in the Module Builder tool.  
 **Authoring Tool:**: <a href="https://www.madcapsoftware.com/products/flare/"  target="_blank">Madcap Flare</a>  
 <div className="image center width80">
