@@ -6,33 +6,46 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #EE7220;
-  --ifm-color-primary-dark: #fe6704;
-  --ifm-color-primary-darker: #e25b02;
-  --ifm-color-primary-darkest: #c65002;
-  --ifm-color-primary-light: #E2854A;
-  --ifm-color-primary-lighter: #e38a4f;
-  --ifm-color-primary-lightest: #e59661;
-  --lfm-color-table-border: #fce8da;
-  --lfm-color-table-altBackground: #fefaf6;
-  --lfm-color-table-altHeadBackground: #fdf1e7;
+  --ifm-color-primary: 	#556B2F;
+  --ifm-color-primary-dark: #1b713e;
+  --ifm-color-primary-darker: #14532d;
+  --ifm-color-primary-darkest: #0f3f23;
+  --ifm-color-primary-light: 	#9caf88;
+  --ifm-color-primary-lighter: #dfffeb;
+  --ifm-color-primary-lightest: #f4fff8;
+  --lfm-color-table-border:	#d5d8c2;
+  --lfm-color-table-altBackground: #f4fff8;
+  --lfm-color-table-altHeadBackground: #9caf88;
+  --ifm-footer-background-color: #2e3d20;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #c65002;
+  --ifm-color-primary: #556B2F;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+  --ifm-footer-background-color: #2e3d20;
+  --lfm-color-table-border:	#d5d8c2;
+  --lfm-color-table-altBackground: #0f3f23;
+  --lfm-color-table-altHeadBackground: #14532d;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+a {
+  padding: 0px;
+  margin: 0px;
+}
+.footer--dark {
+    background-color: #2e3d20 !important;
+}
+
 table {
-  border: .5px solid var(--lfm-color-table-border);
+  border: 1px solid var(--lfm-color-table-border);
   border-radius: 4px
 }
 
@@ -45,8 +58,8 @@ table tr:nth-child(2n) {
     background-color: var(--lfm-color-table-altBackground);
 }
 
-.image {
-  border: 1px solid var(--ifm-color-primary-lightest);
+img {
+  border: 0.01em solid var(--ifm-color-primary-light);
   border-radius: 4px;
   margin-bottom: 1.5em;
 }
@@ -63,6 +76,11 @@ table tr:nth-child(2n) {
 
 .width80 {
   max-width: 80%;
+  height: auto;
+}
+
+.width50 {
+  max-width: 50%;
   height: auto;
 }
 

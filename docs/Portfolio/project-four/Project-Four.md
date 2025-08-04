@@ -4,6 +4,9 @@
     sidebar_position: 4
 ---
 # Conceptual Article Example  
+<div className="image center width90">
+    <a href="https://docs.unqork.io/"  target="_blank">![Unqork Documentation Hub](/img/project4.jpg "Unqork Documentation Hub")</a>
+</div>  
 | Function | Details |
 | --- | --- |
 | Title | Unqork Documentation Hub |
@@ -15,6 +18,3 @@
 | Key Responsibilities | - **Site Design & Layout**: Built a responsive and accessible documentation site using MadCap Flare, focusing on ease of navigation, clean information hierarchy, and consistent branding. <br /> - **Implementation**: Configured site structure, versioning, and custom components to support both internal teams and external users. Used Git and CI/CD pipelines to publish updates. <br /> - **Content Strategy and Language**: Developed documentation tone and style aligned with the company’s voice. Wrote task-based, user-centric help content, onboarding guides, and API references. <br /> - **Collaboration**: Worked cross-functionally with product managers, engineers, and UX designers to ensure documentation matched real-world user workflows and product functionality. <br /> |
 | Outcomes | - Simplified **navigation** by reducing the average amount of clicks needed to reach an article from six to four. <br /> - Increased **time on page** for users by ~45%. <br /> - Documentation **oragnic traffic** increased by ~650% via improved SEO (search engine discoverability). <br />
 | Authoring Tool | <a href="https://www.madcapsoftware.com/products/flare/"  target="_blank">Madcap Flare</a> |  
-<div className="image center width100">
-    <a href="https://docs.unqork.io/"  target="_blank">![Unqork Documentation Hub](/img/project3.jpg "Unqork Documentation Hub")</a>
-</div>  
