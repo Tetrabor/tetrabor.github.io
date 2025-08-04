@@ -84,6 +84,9 @@ img {
   height: auto;
 }
 
+.heroImage {
+  height: 10em;
+}
 .center {
   display: block; /* Images are inline by default, make it block-level */
   margin-left: auto;
@@ -95,4 +98,9 @@ img {
   grid-template-columns: auto 1fr;
   column-gap: 1em; /* 1em gap between the two columns */
   justify-items: start; /* ensures content in each column is left-aligned */
+}
+
+header.hero {
+  padding-top: 2em;
+  padding-bottom: .4em;
 }

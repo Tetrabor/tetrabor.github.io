@@ -87,7 +87,7 @@ const config: Config = {
     ],
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: "Michael Sheleman's Portfolio",
+      title: "Michael Sheleman",
       logo: {
         alt: 'My Site Logo',
         src: 'img/michaelShelemanBig.png',

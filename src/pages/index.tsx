@@ -21,7 +21,7 @@ function HomepageHeader() {
         </div>
         <div className={styles.heroImage}>
           <img
-            src="/img/msheleman.png"
+            src="/img/msheleman.jpg"
             alt="Michael Sheleman"
             className={styles.image}
           />
