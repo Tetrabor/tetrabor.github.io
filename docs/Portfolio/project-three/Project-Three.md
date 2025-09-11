@@ -3,7 +3,7 @@
     sidebar_label: Procedural Guide
     sidebar_position: 3
 ---
-# Conceptual Article Example  
+# Procedural Guide Example  
 <div className="image center width90">
     <a href="https://docs.unqork.io/Content/A06-ModEditor-Data_Workflow/A0605-Array/A0605002-Get_Operator.htm"  target="_blank">![ARIA Reference Guide Article](/img/project3.jpg "ARIA Reference Guide")</a>
 </div>  

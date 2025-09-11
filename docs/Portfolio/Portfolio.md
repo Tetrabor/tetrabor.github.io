@@ -3,9 +3,9 @@
     sidebar_label: Portfolio
     sidebar_position: 2
 ---
-# Technical Writing Protfolio
-Use the links below to view my technical writing works. All projects within the last four years have been developers for the Unqork Software Platform.
-## Table of Contents
+# Technical Writing Porfolio
+Use the links below to view my technical writing works. All projects within the last four years have been developers for the Unqork Software Platform.  
+## Portfolio Projects
 - [Conceptual Article](/docs/Portfolio/project-one)
 - [Reference Article](/docs/Portfolio/project-two)
 - [Procedural Article](/docs/Portfolio/project-three)
