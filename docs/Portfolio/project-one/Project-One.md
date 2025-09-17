@@ -2,6 +2,7 @@
     title: Conceptual Article Example
     sidebar_label: Conceptual Article
     sidebar_position: 1
+    hide_table_of_contents: true
 ---
 # Conceptual Article Example  
 <div className="image center width90">
@@ -25,5 +26,5 @@ View the original article in the iFrame below. This version has been preserved f
   src="/docs/taskList/Default.htm"
   width="100%"
   height="600"
-  style={{border: '1px solid black'}}
+  style={{border: '1px solid var(--ifm-color-primary-light)'}}
 />
