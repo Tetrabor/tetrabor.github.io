@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="" data-mc-conditions="Default.RELEASE READY">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>Bulk Data Operations: Import</title>
+        <link href="../../Resources/TableStylesheets/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="canonical" href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109D-BDO-Import.htm" />
+        <link href="../../Resources/Stylesheets/2024Styles.css" rel="stylesheet" type="text/css" />
+        <meta name="Authors" content="Cliff Coss (Editor),Michael Sheleman (Writer)" />
+        <meta name="description" content="The Bulk Data Operations (BDO) Import API Endpoint lets you import your submission data into the Unqork platform. You can make an import request using curl, Postman, or any other service that supports a POST request." />
+        <meta name="theme-color" content="#1B4F64" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <h1><a name="BDO_Import"></a>Bulk Data Operations: Import</h1>
+        <p class="Important">All BDO endpoints are only accessible to <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term22">Creator<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Unqork Users, or Designer Users; is anyone who is inside the Unqork platform.</span></a> and <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term1">Express Administrator<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Includes the Short Answer component, Long Answer component, Select Boxes, Radio component, Dropdown, Number component and Single Checkbox.</span></a> users in Unqork.</p>
+        <h2><a name="Overview"></a>Overview</h2>
+        <p>The <strong>Bulk Data Operations (BDO) Import</strong>&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term21">API<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>APIs (application programming interfaces) are a set of protocols and definitions developers use to build and integrate application software. APIs act as the connective tissue between products and services.</span></a>&#160;endpoint lets you import your <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term32">submission data<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Record Data. Submission data consists of information saved by Unqork components. View submission data by using the angular command, or in Record Collections.</span></a> into the Unqork platform.  You can  make an import request using curl, Postman, or any other service that supports a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term205">POST<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The HTTP POST method is used to send data to a server to create or update a resource, typically including the data in the body of the request.</span></a> request. </p>
+        <p class="LearnMore">To discover how to set up API calls using a third-party program, view our <a href="https://docs.unqork.io/Content/L-Learning_Paths/L17-Expert_Configuration/L17000-General/L17002-Test_Endpoints_Third_Party_Apps.htm" target="_blank">Testing API Endpoints Using Third-Party Applications</a> article.</p>
+        <p class="Tip">You can test the BDO Import endpoint using the Unqork Services page. To access the Unqork Services page, enter the following address into your browser:&#160;<span class="Inline-Code">https://<span class="Inline-CodeHighlight">{environment}</span>.unqork.io/fbu/uapi/docs/documentation/#/Bulk%20Operations/import</span>. Replace <span class="Inline-CodeHighlight">{environment}</span> with the name of your Unqork environment.</p>
+        <h2><a name="Import_Endpoint"></a>Importing Submission Data Using Bulk Data Operations</h2>
+        <p>The BDO&#160;Import method uses the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term40">HTTP<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>HTTP (Hypertext Transfer Protocol) is an application-layer protocol used to transmit hypermedia documents like HTML.</span></a>&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term205">POST<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The HTTP POST method is used to send data to a server to create or update a resource, typically including the data in the body of the request.</span></a> method and the following endpoint: <span class="Inline-Code">https://<span class="Inline-CodeHighlight">{environment}</span>.unqork.io/fbu/uapi/bulk-operations/import</span>. Replace <span class="Inline-CodeHighlight">{environment}</span> with the name of your Unqork environment.</p>
+        <p class="Important">Import jobs are limited to 100 MB.</p>
+        <p class="Note">To make calls using third-party programs, you must add an authorization key/value pair to the header. To learn more, view our <a href="https://docs.unqork.io/Content/L-Learning_Paths/L17-Expert_Configuration/L17000-General/L17002-Test_Endpoints_Third_Party_Apps.htm?Highlight=postman#Creating" target="_blank">Testing API Endpoints Using Third-Party Applications</a> article.</p>
+        <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+            <div class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>{<br />&#160;&#160;"dataModelOrModuleId": "string",<br />&#160;&#160;"fallbackRecordOwner": "string",<br />&#160;&#160;"fileFormat": "CSV",<br />&#160;&#160;"fileLocation": "string",<br />&#160;&#160;"name": "string",<br />&#160;&#160;"storeInData": "false"<br />}</code></pre>
+            </div>
+        </div>
+        <p>The following parameters are available for the Bulk Data Import&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term200">schema<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Schema is a declarative language that defines the structure, content, and constraints of the data.</span></a>:</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+            <col class="TableStyle-2022-AltRows-Column-Term" />
+            <col class="TableStyle-2022-AltRows-Column-Description" />
+            <col class="TableStyle-2022-AltRows-Column-Term" />
+            <col class="TableStyle-2022-AltRows-Column-Description" />
+            <thead>
+                <tr class="TableStyle-2022-AltRows-Head-Header1">
+                    <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">
+                        <p>Key</p>
+                    </th>
+                    <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">
+                        <p>Possible Values</p>
+                    </th>
+                    <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">
+                        <p>Description</p>
+                    </th>
+                    <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Required</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-2022-AltRows-Body-Body1">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>dataModelOrModuleId</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                        <p>string (no spaces)</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>Specify the Data Model ID, or <span class="mc-variable General.ModuleUppercase variable">Module</span> ID, containing the data you want to import.</p>
+                        <p class="Tip">To find a Data Model's ID value, view our <a href="https://docs.unqork.io/Content/L-Learning_Paths/L25-Data_Modeling/L25008-How_to_Query_Data_Models.htm#Locating" target="_blank">How to: Query Data Model Records Data</a> article.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                        <p>fallbackRecordOwner</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                        <p>string (no spaces)</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                        <p>Enter the userId of the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term204">Unqork Service User<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Unqork Service Users are server-side only credentials used in API calls and authorizations. Unlike regular express users, service users are not tied to a person. Instead, they are managed by the company account. 
+Service users have been replaced by Express Credentials created in the API Access Management administration page.</span></a> or Express Access Credential that has authorized access to the workspace.</p>
+                        <p class="LearnMore">Create new Express Credentials using the <a href="https://docs.unqork.io/Content/D-Administration/D10001-API_Access_Management.htm" target="_blank">API&#160;Access Management</a> page.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-Body1">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>fileFormat</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                        <p>CSV</p>
+                        <p>ZIPWITHCSV</p>
+                        <p>JSON</p>
+                        <p>ZIPWITHJSON</p>
+                        <p>ZIPWITHMULTIPLEJSON</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>Specify the file format you want to extract. File formats include:</p>
+                        <ul>
+                            <li><span class="BoldText">CSV</span>: Import records from a single <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term202">CSV<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Comma-separated values (CSV) is a plain text file format that stores tabular data, such as spreadsheets or databases. CSV files are a common way to store and send data because they are easy to import and export between different programs.</span></a>&#160;file.</li>
+                            <li>
+                                <p><span class="BoldText">ZIPWITHCSV</span>: Import records from a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term203">ZIP<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A zip file is a file format that can contain multiple files combined and compressed into one file. Since it's a type of compressed file, a zip file can be smaller in size than the files it contains.</span></a>&#160;file containing a single&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term202">CSV<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Comma-separated values (CSV) is a plain text file format that stores tabular data, such as spreadsheets or databases. CSV files are a common way to store and send data because they are easy to import and export between different programs.</span></a>&#160;file.</p>
+                            </li>
+                            <li>
+                                <p><span class="BoldText">JSON</span>: Import records from  a single <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term201">JSON Lines<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JSON Lines is a format for storing structured data that may be processed one record at a time. It works with unix-style text processing tools and shell pipelines.</span></a> file.</p>
+                            </li>
+                            <li>
+                                <p><span class="BoldText">ZIPWITHJSON</span>: Import records from a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term203">ZIP<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A zip file is a file format that can contain multiple files combined and compressed into one file. Since it's a type of compressed file, a zip file can be smaller in size than the files it contains.</span></a>&#160;file containing a single <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term201">JSON Lines<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JSON Lines is a format for storing structured data that may be processed one record at a time. It works with unix-style text processing tools and shell pipelines.</span></a>&#160;file.</p>
+                            </li>
+                            <li>
+                                <p><span class="BoldText">ZIPWITHMULTIPLEJSON</span>: Import records from a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term203">ZIP<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A zip file is a file format that can contain multiple files combined and compressed into one file. Since it's a type of compressed file, a zip file can be smaller in size than the files it contains.</span></a>&#160;file containing <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term33">JSON<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JSON (JavaScript Object Notation) is an open standard  file and data interchange format. Unqork uses JSON for submission (record) data.</span></a> files where each JSON file is one single record.</p>
+                            </li>
+                        </ul>
+                        <p class="Note">The value must be uppercase.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                        <p>fileLocation</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                        <p>string</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                        <p>Enter the Unqork Cloud file address. For example, <span class="Inline-Code">unqorkResource/export/f22047aa-13d3-4070-8def-a8a1a401afff/0.json.gz</span>.</p>
+                        <p class="LearnMore">Learn how to upload a file and create an Unqork Cloud file address in our  <a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109F-BDO-Upload_Link.htm" target="_blank">Bulk Operations: Upload-Link</a> article.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-Body1">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>name</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                        <p>string</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>Enter a value to name the import operation by. Names can include spaces. This value also displays in the <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00103E-Record_Collections_Viewer_Job_Tracker.htm" target="_blank">Job Tracker's File Name</a> column.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                    <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                        <p>storeInData</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyB-Description-AltBody">
+                        <p>Boolean</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                        <p>When set to <span class="Inline-Code">true</span>, records from the incoming file are stored under the <span class="Inline-Code">data</span> property in submission record.</p>
+                        <p>When set to <span class="Inline-Code">false</span>, records from the incoming file are treated as a full submission record, including the full submission data and Unqork metadata.</p>
+                        <p class="Important">Unqork recommends setting this property to <span class="Inline-Code">true</span>.</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyA-Description-AltBody">
+                        <p>Yes</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><a name="Example_Response"></a>Example Response</h3>
+        <p>Below is an example response of importing  records:</p>
+        <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+            <div class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>{<br />&#160;&#160;&#160;&#160;"id": "67169684ec1bf4776fa760a5",<br />&#160;&#160;&#160;&#160;"created": 1729533572882,<br />&#160;&#160;&#160;&#160;"modified": 1729533572882,<br />&#160;&#160;&#160;&#160;"createdBy": "creatorAccount@creatorCompany.com",<br />&#160;&#160;&#160;&#160;"modifiedBy": "creatorAccount@creatorCompany.com",<br />&#160;&#160;&#160;&#160;"data": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "UPDATE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"database": "unqork",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "submissions",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"entityType": "MODULE"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Import API Test 1",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"steps": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stepType": "UNZIP",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"status": "created",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"options": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "UPDATE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"update": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"upsert": true,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"uniqueKey": "",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"metaOverride": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"form": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"owner": "express-access-user"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"storeInData": false<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"files": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"source": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "0.json.gz",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"location": "unqorkResource/export/f22047aa-13d3-4070-8def-a8a1a401afff/0.json.gz",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"format": "ZIPWITHJSON"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"destination": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"location": "unqorkResource/update/0f8eabed-2926-405c-801d-020fd80ee79c.json",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"format": "JSON"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stepType": "UPDATE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"status": "created",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"options": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"update": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"headers": [],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"delimiter": ",",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"uniqueKey": "",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"upsert": true,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"metaOverride": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"form": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"owner": "express-access-user"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"storeInData": false<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"files": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"source": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "0f8eabed-2926-405c-801d-020fd80ee79c.json",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"location": "unqorkResource/update/0f8eabed-2926-405c-801d-020fd80ee79c.json",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"format": "JSON"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"database": "unqork",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "submissions",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"entityType": "MODULE"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stepType": "CLEARDATA",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"status": "created",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"files": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"source": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"location": "unqorkResource/update/0f8eabed-2926-405c-801d-020fd80ee79c.json",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"format": "JSON"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]<br />&#160;&#160;&#160;&#160;}<br />}</code></pre>
+            </div>
+        </div>
+        <h2><a name="Get_Job_Details"></a>Viewing a Bulk Data Import Operation Job's Details</h2>
+        <p>After starting a Bulk Data Import, you can view the job details using the <span class="Inline-Code">/fbu/uapi/bulk-operations/job/{jobId}</span> endpoint and the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term206">GET<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The HTTP GET method is used to request data from a server, typically retrieving information without modifying any resources.</span></a>&#160;method. Copy the import response's <span class="Inline-Code">id</span> value and replace the job detail's <span class="Inline-Code">{jobId}</span> placeholder. For example, <span class="Inline-Code">https://{environment}.unqork.io/fbu/uapi/bulk-operations/job/67169684ec1bf4776fa760a5</span>.</p>
+        <h3><a name="Job_Details_Example_Response"></a>Example Response</h3>
+        <p>Below is an example of a Job Details endpoint response:</p>
+        <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+            <div class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>{<br />&#160;&#160;&#160;&#160;"id": "6711511ab056c32e103b11e5",<br />&#160;&#160;&#160;&#160;"created": 1729188122233,<br />&#160;&#160;&#160;&#160;"modified": 1729188196285,<br />&#160;&#160;&#160;&#160;"createdBy": "creatorName@creatorCompany.com",<br />&#160;&#160;&#160;&#160;"modifiedBy": null,<br />&#160;&#160;&#160;&#160;"data": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "UPDATE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"database": "unqork",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "submissions",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"entityType": "MODULE"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Import Example 1",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"steps": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stepType": "UPDATE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"id": "6711512eb056c32e103b11e6",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"status": "completed",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"files": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"source": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "0.csv",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"location": "unqorkResource/export/78b9abdc-df4a-42e0-8b02-1ce0377a1a61/0.csv",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"format": "CSV"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"options": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"update": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"headers": [],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"delimiter": ",",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"uniqueKey": "",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"upsert": true,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"metaOverride": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"form": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"owner": "test-authenticated-user"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"storeInData": true<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"database": "unqork",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "submissions",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"entityType": "MODULE"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"details": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"database": "unqork",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "submissions",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"entityType": "MODULE"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"chunks": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"status": "completed",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"chunkQueueId": "1",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"chunkRecord": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"start": 2,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"end": 5<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"docs": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"total": 4,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"processed": 4<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"chunkFileKey": "bulkDataOperation/update/unqorkResource/export/78b9abdc-df4a-42e0-8b02-1ce0377a1a61/0.csv-0.csv",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"auditFileKey": "unqorkResource/audit/6711512eb056c32e103b11e6/1.json.gz",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"startTime": "2024-10-17T18:02:54.728Z",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"endTime": "2024-10-17T18:02:55.200Z"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!!"docs": {!!<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!!"total": 4,!!<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!!"processed": 4!!<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!!"status": "completed"!!<br />&#160;&#160;&#160;&#160;}<br />}</code></pre>
+            </div>
+        </div>
+        <p>Using the above example response, the following properties might be important for <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term22">Creator<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Unqork Users, or Designer Users; is anyone who is inside the Unqork platform.</span></a> processes or pipeline development:</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+            <col class="TableStyle-2022-AltRows-Column-Term" style="width: 156px;" />
+            <col class="TableStyle-2022-AltRows-Column-Description" />
+            <col class="TableStyle-2022-AltRows-Column-Term" style="width: 1060px;" />
+            <thead>
+                <tr class="TableStyle-2022-AltRows-Head-Header1">
+                    <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Response Property</th>
+                    <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Description</th>
+                    <th class="TableStyle-2022-AltRows-HeadD-Term-Header1">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-2022-AltRows-Body-Body1">
+                    <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                        <p>status</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                        <p>The current status of the operation. The overall operation status is displayed at the bottom of the <span class="Inline-Code">data</span> object. When troubleshooting, review the <span class="Inline-Code">status</span> property contained in each <span class="Inline-Code">stepType</span> in the <span class="Inline-Code">steps</span> array. This value is also reflected in the <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00103E-Record_Collections_Viewer_Job_Tracker.htm" target="_blank">Job Tracker's Job Status</a> column.</p>
+                        <p>Status values include:</p>
+                        <ul>
+                            <li><span class="Inline-Code">inProgress</span>: The import operation is still processing the file(s).</li>
+                            <li>
+                                <p><span class="Inline-Code">completed</span>: The import is complete.</p>
+                            </li>
+                            <li>
+                                <p><span class="Inline-Code">canceled</span>: The import has been manually stopped by the user.</p>
+                            </li>
+                            <li>
+                                <p><span class="Inline-Code">partiallyCompleted</span>: The import is complete, but has reported issues. </p>
+                            </li>
+                            <li>
+                                <p><span class="Inline-Code">failed</span>: The import failed. Review each <span class="Inline-Code">stepType</span>'s <span class="Inline-Code">status</span> value to determine which process failed.</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                        <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+                            <div class="hljs language-json codeSnippetBody codeSnippetBodyhljs codeSnippetBodylanguage-json" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>{<br />&#160;&#160;&#160;&#160;"data": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "EXPORT",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"collection": "658c3c6b70573db027a0f3a2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"dataLocation": {},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Example Export 2",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"steps": [],<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;!!"status": "completed"!!<br />&#160;&#160;&#160;&#160;}<br />}</code></pre>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                    <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                        <p>docs</p>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyB-Description-AltBody">
+                        <p>Located in the <span class="Inline-Code">details</span> object, the <span class="Inline-Code">docs</span> objects displays the following properties:</p>
+                        <ul>
+                            <li>
+                                <p><span class="Inline-Code">processed</span>: The amount of records successfully processed by the operation.</p>
+                            </li>
+                            <li>
+                                <p><span class="Inline-Code">total</span>: The total records processed.</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-2022-AltRows-BodyA-Term-AltBody">
+                        <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+                            <div class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="False"><pre><code>"details": {<br />&#160;&#160;"dataLocation": {},<br />&#160;&#160;"chunks": [],<br />&#160;&#160;"docs": {<br />&#160;&#160;&#160;&#160;!!"total": 4,!!<br />&#160;&#160;&#160;&#160;!!"processed": 4!!<br />&#160;&#160;&#160;&#160;}<br />&#160;&#160;}<br />}</code></pre>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Resources"></a>Resources</h2>
+        <ul>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/LandingPages/Landing_Bulk_Data_Operations.htm" target="_blank" title="Article: Bulk Data Operations Landing Page">Bulk Data Operations Landing Page</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109B-BDO-Export.htm" target="_blank" title="Article: Bulk Data Operations Export API Endpoint">Export Submissions using Bulk Data Operations</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109A-BDO-Update.htm" target="_blank" title="Article: Bulk Data Operations Import API Endpoint">Update Submissions using Bulk Data&#160;Operations</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109E-BDO-Download_Link.htm" target="_blank">Create a Download Link for Data  Files</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109F-BDO-Upload_Link.htm" target="_blank">Create an Upload Link for  Data  Files</a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109C-BDO-Delete.htm" target="_blank"><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01109C-BDO-Delete.htm" target="_blank">Delete Submissions using Bulk Data Operators</a></a>
+                </p>
+            </li>
+            <li>
+                <p><a href="https://docs.unqork.io/Content/L-Learning_Paths/L17-Expert_Configuration/L17000-General/L17002-Test_Endpoints_Third_Party_Apps.htm" target="_blank" title="Article: Testing API Endpoints Using Third-Party Applications">Call API Endpoints Using a Third-Party Service</a>
+                </p>
+            </li>
+        </ul>
+        <p>
+            <script src="../../Resources/Scripts/codeSnippetHighlight.js">
+            </script>
+            <script src="../../Resources/Scripts/highlight.min.js">
+            </script>
+            <script>/* <![CDATA[ */hljs.highlightAll();/* ]]> */</script>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: * 
+Disallow: /Content/Sitemap.xml
+Sitemap: https://docs.unqork.io/Sitemap.xml

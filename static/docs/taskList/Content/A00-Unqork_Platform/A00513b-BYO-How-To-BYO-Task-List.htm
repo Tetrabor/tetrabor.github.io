@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="" data-mc-conditions="Default.RELEASE READY">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>How To: Bring Your Own Task List</title>
+        <link href="../Resources/TableStylesheets/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/TableStyles/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="../Resources/TableStylesheets/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="canonical" href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00513b-BYO-How-To-BYO-Task-List.htm" />
+        <link href="../Resources/Stylesheets/2024Styles.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/TableStyles/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <meta name="Authors" content="Cliff Coss (Editor),Michael Sheleman (AidenAI Writer)" />
+        <meta name="description" content="This how-to guide details how to create a custom (Bring Your Own) Task List component. It demonstrates how to build an asset that fully integrates with the Unqork platform using its own event and operation." />
+        <meta name="theme-color" content="#1B4F64" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <style>
+		.body-container, .body {
+		background: var(--grey-50) !important;
+		background-color: var(--grey-50) !important;
+		}
+	</style>
+    <body>
+        <h1><a name="how-to-byo"></a>How To: Bring Your Own Task List</h1>
+        <div class="section">
+            <h2><a name="Overview"></a>Overview</h2>
+            <p>This how-to guide details how to <strong>create a custom</strong> (<a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00501-BYO-Introduction.htm" target="_blank">Bring Your Own</a>) <strong>Task List component</strong>. It demonstrates how to build an asset that fully integrates with the Unqork platform using its own event and operation.</p>
+            <p class="Important">The <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00501-BYO-Introduction.htm" target="_blank">Bring Your Own</a> feature is intended for developers who have a strong understanding of the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span> and <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term77">JavaScript<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JavaScript is an object-oriented computer programming language. It is most-commonly used for interactive effects in the browser.</span></a>. </p>
+        </div>
+        <div class="section">
+            <h2><a name="Ideation"></a>BYO Task List Asset Ideation</h2>
+            <p>For this example, the fictional client company "ABC" wants to implement a Task List as a custom component in the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>. The component itself should let <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term22">Creators<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Unqork Users, or Designer Users; is anyone who is inside the Unqork platform.</span></a>&#160;configure the task list's <span class="mc-variable General.ExpressView variable">Express View</span>&#160;title, add or remove additional items, and add the option to set items to completed (checked). The client requests the Task List to support an event that emits when a user clicks on an item in the checklist. They also ask that it include an operation that sets the completed (checked/unchecked) state of a single item in the checklist.</p>
+            <p>As the developer assigned to this task, break down and document the client's ask into actionable sections: </p>
+            <ul>
+                <li>
+                    <p><span class="BoldText">Asset Types</span>: What types of assets are needed to implement to meet the client's requirements of a Task List asset?</p>
+                    <ul>
+                        <li>
+                            <p><span class="BoldText">Component(s)</span>: Does the client's request require the creation of something not currently supported in the Unqork platform?</p>
+                        </li>
+                        <li>
+                            <p><span class="BoldText">Event(s):</span>&#160;Does the asset need to emit an <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05018a-Introduction_Operations_Builder.htm#Understa" target="_blank">event</a> when it's used? What action should emit the event?</p>
+                        </li>
+                        <li>
+                            <p><span class="BoldText">Operation(s)</span>: Does the asset need to be manipulated by other elements using an <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05018a-Introduction_Operations_Builder.htm#Understa2" target="_blank">operation</a>?</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p><span class="BoldText">Inputs &amp; Outputs</span>: Catalog a list of potential inputs and outputs for the asset. Events are typically an output in this list.</p>
+                </li>
+                <li>
+                    <p><span class="BoldText">Naming Scheme</span>: Create a naming scheme for the asset that does not conflict with Unqork values, or potential future custom assets.</p>
+                    <p class="LearnMore">To understand naming scheme limitations, view the Important callout in the overview of our <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00503-BYO-Manifest-JSON.htm" target="_blank">Bring Your Own (BYO): Understanding the manifest.json File</a> article.</p>
+                </li>
+            </ul>
+            <p>Now that the client has described the ask, create a document detailing all the potential elements the Task List asset requires.</p>
+            <h3>Example Ideation Documentation</h3>
+            <p>The sections below detail the product requirements that meet the client's request. Developers  use this information to implement the Task List <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term77">JavaScript<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JavaScript is an object-oriented computer programming language. It is most-commonly used for interactive effects in the browser.</span></a>, create the manifest file and package, then  package it to the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>.</p>
+            <h4>Component(s)</h4>
+            <table style="mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');margin-left: 0;margin-right: auto;width: 100%;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Component Name</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p>Task List</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-Body1">
+                            <p>A simple list of items with check boxes next to each. End-users click on each item to check or uncheck the item in the list.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Event(s)</h4>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/2022-AltRows.css');width: 100%;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Event Name</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Event Value</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Term-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p><a name="TaskList_Item_Toggled"></a>Task List Item Toggled</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-Body1">
+                            <p><span class="Inline-Code">taskListItemToggled</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Term-Body1">
+                            <p>An event that emits when an end-user checks or unchecks a task item. The event includes a payload with the text and completed status of the updated item.</p>
+                            <p><span class="BoldText">Event Payload</span>: Adds the name of the item that was clicked.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Operation(s)</h4>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/2022-AltRows.css');width: 100%;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Event Name</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Event Value</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Term-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p>Task List Toggle Task List Item</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-Body1">
+                            <p><span class="Inline-Code">toggleTaskListItem</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Term-Body1">
+                            <p>Toggles or explicitly sets the completed state of a single item in a target task list.</p>
+                            <p>Includes the following settings:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="Inline-Code">targetKey</span> (string, required): The component key of the task list to modify.</p>
+                                </li>
+                                <li>
+                                    <p><span class="Inline-Code">item</span> (number|string, required): Either the index of the item or the exact text to match.</p>
+                                </li>
+                                <li>
+                                    <p><span class="Inline-Code">completed</span> (boolean, optional): A <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term175">boolean<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Boolean data type accepts one of two values: true, or, false.</span></a> to set the <span class="Inline-Code">completed</span> property of item. If not provided, toggles the existing value to the opposite. For example, <span class="Inline-Code">true</span> (checked) becomes <span class="Inline-Code">false</span> (unchecked), or <span class="Inline-Code">false</span> (unchecked)&#160;becomes <span class="Inline-Code">true</span> (checked). </p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Inputs</h4>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/2022-AltRows.css');width: 100%;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Settings</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Type</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Object Type</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">label</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p>Input</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>string componentKey</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>The title that displays above the task list.</p>
+                            <p>Default value is "Tasks".</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                            <p><span class="Inline-Code">value</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-AltBody">
+                            <p>Input</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                            <p class="nowrap">array componentKey</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-AltBody">
+                            <p>An array of objects that defines the task items in the list. Each object in the array contains the following:</p>
+                            <ul>
+                                <li>
+                                    <p><span class="Inline-Code">text</span> (string): The text of the task item.</p>
+                                </li>
+                                <li>
+                                    <p><span class="Inline-Code">completed</span> (boolean): Whether the task item's checkbox is checked. <br />Default value is <span class="Inline-Code">false</span> (unchecked).</p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Libraries</h4>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/2022-AltRows.css');width: 100%;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Library Name</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p>N/A</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-Body1">
+                            <p>N/A</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Naming Scheme</h4>
+            <p>Verify all naming values do not conflict with existing Unqork assets, or other custom assets in the environment.</p>
+            <div class="Important">
+                <p>Unqork does not enforce <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term251">programmatic name spacing<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Programmatic namespacing is a way to group related code together under a common name so it doesn’t conflict with other code. It helps keep programs organized and prevents errors when different parts of a program use the same names.</span></a> for custom asset types. All type values for components, operations, and events must be globally unique. If multiple custom assets share the same type, or if a custom asset uses a type that conflicts with a native Unqork type, the runtime will render or execute only the first matching definition. Doing so leads to unpredictable behavior, asset shadowing, or broken functionality—especially when bundling or importing multiple packages.</p>
+                <p>It is the responsibility of the developer to ensure type uniqueness to prevent collisions. Component, operation, and event types require a unique name to avoid collision issues.</p>
+                <p>To avoid namespace issues,  prefix custom components with a name unique to your company or application. For example, if a company named <span class="BoldText">ABC</span> creates a <span class="BoldText">Card Panel</span> component. The component's name space could be <span class="Inline-Code">abcCardPanel</span>.</p>
+            </div>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Asset Type</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Asset Name</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Term-Header1">Naming Scheme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>Component</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p>Task List</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p><span class="Inline-Code">taskList</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p>Event / Output</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p>Task List Item Toggled</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p><span class="Inline-Code">taskListItemToggled</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>Input</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p>Label</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p><span class="Inline-Code">label</span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                            <p>Input</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-AltBody">
+                            <p>Task Item Name and Boolean Value</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Term-AltBody">
+                            <p><span class="Inline-Code">value</span>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <h2><a name="manifestJSON"></a>Create the <span class="Inline-Code">manifest.json</span> File</h2>
+            <p>The <span class="Inline-Code">manfest.json</span> file serves as the contract between Unqork and the Task List implementation.</p>
+            <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+                <div class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="True"><pre><span class="codeSnippetLineNumbers" style="border-right: solid 2px #F5F8FA;" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+</span><code>{<br />&#160;&#160;"name": "TaskList",<br />&#160;&#160;"version": "1.0.0",<br />&#160;&#160;"main": "taskList.js",<br />&#160;&#160;"type": "custom",<br />&#160;&#160;"productType": "BYO",<br />&#160;&#160;"description": "A simple task list component with an event and an operation.",<br />&#160;&#160;"components": [<br />&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;"name": "Example Task List",<br />&#160;&#160;&#160;&#160;&#160;&#160;"type": "taskList",<br />&#160;&#160;&#160;&#160;&#160;&#160;"description": "Simple task list with checkboxes.",<br />&#160;&#160;&#160;&#160;&#160;&#160;"model": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"label": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Label",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "string",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Label of Task List",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"default": "Tasks"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"value": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Value",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "array",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Array of task items",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"items": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"text": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "string",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Text to display for the task item"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"completed": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "boolean",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Whether the item is completed",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"default": false<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"required": ["text"]<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"default": []<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"required": ["value"]<br />&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;"events": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Example Task List Item Toggled",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "taskListItemToggled",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Emitted when an end-user checks/unchecks a task item.",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stability": "STABLE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"model": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"const": "taskListItemToggled",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "string",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Name of the event"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"payload": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "The event payload.",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"item": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "A task list item.",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"text": { "type": "string", "description": "Task name."},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"completed": { "type": "boolean", "description": "Whether this task is completed."}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br /><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"required": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"item"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;],<br />&#160;&#160;&#160;&#160;&#160;&#160;"operations": [<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Example Task List Toggle Task List Item",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "toggleTaskListItem",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Toggle (or set) the completion state of a specific item on a target task list.",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"stability": "STABLE",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"model": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"options": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "object",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"properties": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"targetKey": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Target Key",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "string",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Component key of the task list to modify"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"item": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Item",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Index (number) or text (string) of the item to change",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": ["number", "string"]<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"completed": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"name": "Completed",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "boolean",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"description": "Optional explicit completed value; if omitted, the value is toggled"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"const": "toggleTaskListItem",<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"type": "string"<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;},<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"required": ["targetKey", "item"]<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />&#160;&#160;&#160;&#160;&#160;&#160;]<br />&#160;&#160;&#160;&#160;}<br />&#160;&#160;]<br />}</code></pre>
+                </div>
+            </div>
+            <p>The following fields are used at the root level of the manifest:</p>
+            <table style="mc-table-style: url('../Resources/TableStyles/2022-AltRows.css');margin-left: 0;margin-right: auto;" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Field</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Description-Header1">Type</th>
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Required</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">name</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>A&#160;unique identifier for the package. For example, <span class="Inline-Code">MyCompanyNameAssets</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">version</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>The semantic version number. For example, <span class="Inline-Code">1.0.0</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">type</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term216">enum<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An enum, or enumeration type, is a data type that consists of a set of named constants that a variable can be assigned to.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>The package type. Currently, the only supported value is <span class="Inline-Code">custom</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">productType</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term216">enum<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An enum, or enumeration type, is a data type that consists of a set of named constants that a variable can be assigned to.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>The target platform feature. Currently, the only supported value is  <span class="Inline-Code">BYO</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">description</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>A description that displays in the Admin Panel after installation.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">main</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p>
+                                <img src="../Resources/Images/Z-Internal/placeHolderIcons/checkedDummy.jpg" alt="Checked Box Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.3em;margin-right: 0.3em;" />
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>The relative path to the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term77">JavaScript<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JavaScript is an object-oriented computer programming language. It is most-commonly used for interactive effects in the browser.</span></a> entry file. For example, <span class="Inline-Code">index.js</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">components</span>
+                            </p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a>&lt;component-description&gt;</p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p>Optional</p>
+                        </td>
+                        <td rowspan="1" colspan="1" class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>A list of component definitions included in the package.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">events</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a>&lt;event-description&gt;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p>Optional</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>List of event definitions.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p><span class="Inline-Code">operations</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-Body1">
+                            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a>&lt;operation-description&gt;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p>Optional</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-Body1">
+                            <p>List of operation definitions.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Understanding the <span class="Inline-Code">components[]</span> Definition</h3>
+            <p>This definition defines the Task List component:</p>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1" colspan="2">&#160; Export</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Term-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" colspan="2">
+                            <p><span class="Inline-Code">name</span> and <span class="Inline-Code">type</span></p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p>Define the component's name and its internal identifier. The <span class="Inline-Code">type</span> (<span class="Inline-Code">taskList</span>) must match the export name in the JavaScript file (<span class="Inline-Code">taskList.js</span>) so Unqork can link the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term33">JSON<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JSON (JavaScript Object Notation) is an open standard  file and data interchange format. Unqork uses JSON for submission (record) data.</span></a> definition to the correct code.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody" colspan="2">
+                            <p><span class="Inline-Code">model</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p>This object defines a custom event. It exports a model that describes the structure of the event's payload (name and payload). Doing so lets other parts of the Unqork platform use and understand the event that the component emits.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" style="padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;">
+                            <p><span class="centerText">↳</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1" style="border-left-style: none;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p><span class="Inline-Code">label</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p>A <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a> property that serves as the title for the task list. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody" style="padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;">
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody" style="border-left-style: none;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p><span class="Inline-Code">value</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p>An <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a> property that contains the list of task items. Each item is an <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term91">object<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An object is a type of data structure that represents a single, self-contained entity that acts as a container for the characteristics of that entity.</span></a> with a <span class="Inline-Code">text</span> (<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>) and <span class="Inline-Code">completed</span> (<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term175">boolean<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Boolean data type accepts one of two values: true, or, false.</span></a>) property. This schema ensures that the data passed to the component is always in the correct format.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" colspan="2">
+                            <p><span class="Inline-Code">events</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p>This section defines the events the component can emit.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p><span class="centerText">↳</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><span class="Inline-Code">name</span> and <span class="Inline-Code">type</span></p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p>The human-readable name and the unique identifier of the <span class="Inline-Code">taskListItemToggled</span> event.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><span class="Inline-Code">description</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p>Explains when the event is emitted.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;border-bottom-style: solid;border-bottom-width: 1px;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><span class="Inline-Code">model</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p>A schema that defines the payload of the event, ensuring that the data sent with the event (<span class="Inline-Code">item</span> with <span class="Inline-Code">text</span> and <span class="Inline-Code">completed</span> properties) is structured correctly. Doing so lets other components reliably listen for and use this event's data.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" colspan="2">
+                            <p><span class="Inline-Code">operations</span>
+                            </p>
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p>This section defines the actions or operations that can be performed on the component from outside.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p><span class="centerText">↳</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-AltBody">
+                            <p><span class="Inline-Code">name</span> and <span class="Inline-Code">type</span></p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-AltBody">
+                            <p>The name and unique identifier of the <span class="Inline-Code">toggleTaskListItem</span>&#160;operation.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyE-Description-Body1">
+                            <p><span class="Inline-Code">description</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Term-Body1">
+                            <p> Explains what the operation does.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody" style="border-right-style: none;border-right-width: 1px;border-right-color: #e6ecf1;padding-left: 10px;padding-right: 10px;padding-top: 0px;padding-bottom: 0px;">
+                            <p>&#160;</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyB-Description-AltBody">
+                            <p><span class="Inline-Code">model</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Term-AltBody">
+                            <p>Defines the options or parameters for the operation. It requires a <span class="Inline-Code">targetKey</span> to identify the component to act on and an <span class="Inline-Code">item</span> (<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term176">number<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Number data type accepts integer or floating point values. The number data type does not use quotes around numerical values.</span></a> or <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a>) to identify the specific task to modify. The <span class="Inline-Code">completed</span> parameter is optional. This schema ensures that anyone using this operation provides the necessary information.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Resources</h3>
+            <p>To learn more about the manifest.json file, view the following topic:</p>
+            <div class="gridTwo">
+                <div class="CardLink">
+                    <h2>Understanding the <span class="Inline-Code"><span class="BoldText">manifest.json</span></span> File</h2>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00503-BYO-Manifest-JSON.htm" target="_self" class="CardLink">Learn about the file's specification, component and event definitions.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2><a name="Implement"></a>Implement the Task List</h2>
+            <p>For this example, create a file called <span class="Inline-Code">taskList.js</span>. In this file, create a Web Component that does the following:</p>
+            <ul>
+                <li>
+                    <p>Creates a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term258">Shadow DOM<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Shadow DOM is a web standard that allows you to create encapsulated, hidden DOM subtrees for your web components. It provides a way to scope CSS styles and JavaScript behavior within a component, preventing them from leaking out and interfering with the rest of the page.</span></a> as a part of the BYO implementation requirements.</p>
+                </li>
+                <li>
+                    <p>Initializes the Unqork Runtime <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term21">API<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>APIs (application programming interfaces) are a set of protocols and definitions developers use to build and integrate application software. APIs act as the connective tissue between products and services.</span></a> as a part of the BYO implementation requirements.</p>
+                </li>
+                <li>
+                    <p>Subscribes to state changes so that the component can look for changes to the <span class="Inline-Code">label</span> or <span class="Inline-Code">value</span> property, updating the rendering to match. Changes to these properties are made using configuration in the&#160;<span class="mc-variable General.ModuleBuilder variable">Module Builder</span>. </p>
+                </li>
+                <li>
+                    <p>Converts data into a standardized <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a>&#160;of <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term91">objects<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An object is a type of data structure that represents a single, self-contained entity that acts as a container for the characteristics of that entity.</span></a>. Doing so improves error handling if the data is given as a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term79">string<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A string is an object that represents a sequence of characters. Strings typically hold data represented in text form.</span></a> instead of an <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term80">array<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An array is a type of object that stores one or more data types. Data types supported in arrays include numbers, strings, and objects.</span></a>.</p>
+                </li>
+                <li>
+                    <p>Emits an <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05018a-Introduction_Operations_Builder.htm#Understa" target="_blank">event</a> back to the Unqork runtime, so configuration can use the event with <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05018-Operations_Builder.htm" target="_blank">Operations Builder</a> to trigger downstream logic.</p>
+                </li>
+                <li>
+                    <p>Renders the Task List in <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term23">Express View<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Express View is how your end-user views your application. Express View also lets you preview your applications to test your configuration and view the styling. This is also the view your end-users will see when interacting with your application. After configuring a module, click Preview in the Module Builder to interact with the module in Express View.</span></a> as <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term42">HTML<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>HTML (Hyper Text Markup Language) is the standard markup language for for achieving font, color, graphic, and hyperlink effects when creating web pages.</span></a>.</p>
+                </li>
+            </ul>
+            <p>Review the code example below for more information on each method:</p>
+            <p class="Note">The comments in the JavaScript below are written in the JSDoc format. For more information on JSDoc block tags (@param, @return), visit the JSDoc website: <a href="https://jsdoc.app/" target="_blank" class="external">https://jsdoc.app/</a>.</p>
+            <div class="codeSnippet"><a class="codeSnippetCopyButton" role="button" href="javascript:void(0);">Copy</a>
+                <div style="mc-code-lang: JavaScript;" class="codeSnippetBody" data-mc-continue="False" data-mc-line-number-start="1" data-mc-use-line-numbers="True"><pre><span class="codeSnippetLineNumbers" style="border-right: solid 2px #F5F8FA;" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+</span><code><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">UnqorkTaskListComponent</span> <span style="color: #333333; font-weight: bold; ">extends</span> HTMLElement {<br />&#160;&#160;constructor() {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">super</span>()<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.attachShadow({ mode: <span style="color: #dd1144; ">'open'</span> })<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.items = []<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.label = <span style="color: #dd1144; ">'Tasks'</span><br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* This is the only required method to integrate with the Unqork system</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @param {*} api The interface to the Unqork Runtime, used for both</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;monitoring state and emitting events</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;initialize(api) {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.api = api<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.config = api.state.currentState()<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Initial label and value from config (if provided)</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (<span style="color: #333333; font-weight: bold; ">this</span>.config.label != <span style="color: #008080; ">null</span>) <span style="color: #333333; font-weight: bold; ">this</span>.label = <span style="color: #0086b3; ">String</span>(<span style="color: #333333; font-weight: bold; ">this</span>.config.label)<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (<span style="color: #333333; font-weight: bold; ">this</span>.config.value != <span style="color: #008080; ">null</span>) <span style="color: #333333; font-weight: bold; ">this</span>.items = <span style="color: #333333; font-weight: bold; ">this</span>._normalizeItems(<span style="color: #333333; font-weight: bold; ">this</span>.config.value)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Method to render component in the DOM.</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.render(<span style="color: #333333; font-weight: bold; ">this</span>.shadowRoot, <span style="color: #333333; font-weight: bold; ">this</span>.label, <span style="color: #333333; font-weight: bold; ">this</span>.items)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Subscribe to state changes such as SET_PROPERTY</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.subscribeLabel()<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.subscribeValue()<br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* Subscribes to changes in the `label` property of the component's state.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* This method listens to the `state$('label')` observable for updates to the `label` property.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* When a new value is emitted, it updates the `label` property of the component and re-renders the component.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @returns {void}</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;subscribeLabel() {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.api.state.state$(<span style="color: #dd1144; ">'label'</span>).subscribe((label) =&gt; {<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.label = label ?? <span style="color: #dd1144; ">''</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.shadowRoot.innerHTML = <span style="color: #333333; font-weight: bold; ">this</span>.view(<span style="color: #333333; font-weight: bold; ">this</span>.label, <span style="color: #333333; font-weight: bold; ">this</span>.items)<br />&#160;&#160;&#160;&#160;})<br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* Subscribes to changes in the `value` property of the component's state.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* This method listens to the `state$('value')` observable for updates to the `value` property.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* When a new value is emitted, it normalizes the value into an array of items and updates the `items` property.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* It then re-renders the component with the updated items.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @returns {void}</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;subscribeValue() {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.api.state.state$(<span style="color: #dd1144; ">'value'</span>).subscribe((value) =&gt; {<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.items = <span style="color: #333333; font-weight: bold; ">this</span>._normalizeItems(value)<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.shadowRoot.innerHTML = <span style="color: #333333; font-weight: bold; ">this</span>.view(<span style="color: #333333; font-weight: bold; ">this</span>.label, <span style="color: #333333; font-weight: bold; ">this</span>.items)<br />&#160;&#160;&#160;&#160;})<br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* Normalizes the input value into an array of objects with a specific structure.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* This method ensures that the input `value` is converted into an array of objects,</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* where each object contains the following properties:</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* - text: The text to actually display in the taskList item (defaults to an empty string if missing).</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* - completed: A boolean indicating whether the item is completed (defaults to `false` if missing).</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @param value - The input value to normalize. Can be a JSON string or an array.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @returns The normalized array of items.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;_normalizeItems(value) {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> arr = <span style="color: #333333; font-weight: bold; ">typeof</span> value === <span style="color: #dd1144; ">'string'</span> ? <span style="color: #0086b3; ">JSON</span>.parse(value) : value<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (!<span style="color: #0086b3; ">Array</span>.isArray(arr)) <span style="color: #333333; font-weight: bold; ">return</span> []<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">return</span> arr.map((item) =&gt; ({<br />&#160;&#160;&#160;&#160;&#160;&#160;text: <span style="color: #0086b3; ">String</span>(item?.text ?? <span style="color: #dd1144; ">''</span>),<br />&#160;&#160;&#160;&#160;&#160;&#160;completed: <span style="color: #0086b3; ">Boolean</span>(item?.completed),<br />&#160;&#160;&#160;&#160;}))<br />&#160;&#160;}<br /><br />&#160;&#160;render(root, label, items) {<br />&#160;&#160;&#160;&#160;root.innerHTML = <span style="color: #333333; font-weight: bold; ">this</span>.view(label, items)<br /><br />&#160;&#160;&#160;&#160;root.addEventListener(<span style="color: #dd1144; ">'change'</span>, (ev) =&gt; {<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> el = ev.target<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (!(el <span style="color: #333333; font-weight: bold; ">instanceof</span> HTMLInputElement) || el.type !== <span style="color: #dd1144; ">'checkbox'</span>) <span style="color: #333333; font-weight: bold; ">return</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> idx = <span style="color: #0086b3; ">Number</span>(el.getAttribute(<span style="color: #dd1144; ">'data-index'</span>))<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (<span style="color: #0086b3; ">Number</span>.isNaN(idx) || !<span style="color: #333333; font-weight: bold; ">this</span>.items[idx]) <span style="color: #333333; font-weight: bold; ">return</span><br /><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> updatedItem = { ...this.items[idx], completed: el.checked }<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> next = [...this.items]<br />&#160;&#160;&#160;&#160;&#160;&#160;next[idx] = updatedItem<br /><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Update state with new item value</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.api.state.set({ value: next })<br /><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Emit taskListItemToggled event</span><br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.emitItemToggledEvent(updatedItem)<br />&#160;&#160;&#160;&#160;})<br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* Emits a `taskListItemToggled` event when a to-do list item is toggled.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* This method triggers a domain event with the name `taskListItemToggled` and includes</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* the toggled item's details in the event payload. The payload contains the updated item</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* with its `text` and `completed` properties.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;emitItemToggledEvent = (item) =&gt; {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">this</span>.api.events.emit({<br />&#160;&#160;&#160;&#160;&#160;&#160;name: <span style="color: #dd1144; ">'taskListItemToggled'</span>,<br />&#160;&#160;&#160;&#160;&#160;&#160;payload: { item },<br />&#160;&#160;&#160;&#160;})<br />&#160;&#160;}<br /><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// The component view</span><br />&#160;&#160;view(label, items) {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> list = items<br />&#160;&#160;&#160;&#160;&#160;&#160;.map(<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(item, i) =&gt; <span style="color: #dd1144; ">`</span><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;li&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;label&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;input type=<span style="color: #dd1144; ">"checkbox"</span> data-index=<span style="color: #dd1144; ">"${i}"</span> ${item.completed ? <span style="color: #dd1144; ">'checked'</span> : <span style="color: #dd1144; ">''</span>} /&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;${item.text}<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;/label&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;/li&gt;<span style="color: #dd1144; ">`,</span><br />&#160;&#160;&#160;&#160;&#160;&#160;)<br />&#160;&#160;&#160;&#160;&#160;&#160;.join(<span style="color: #dd1144; ">''</span>)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">return</span> <span style="color: #dd1144; ">`</span><br />&#160;&#160;&#160;&#160;&lt;div&gt;${label ?? <span style="color: #dd1144; ">''</span>}&lt;/div&gt;<br />&#160;&#160;&#160;&#160;&lt;ul data-role=<span style="color: #dd1144; ">"list"</span>&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;${list}<br />&#160;&#160;&#160;&#160;&lt;/ul&gt;<br />&#160;&#160;<span style="color: #dd1144; ">`</span><br />&#160;&#160;}<br />}<br /><br /><span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;* This definition defines the state settings (model) for this component</span><br /><span style="color: #999988; font-style: italic; ">&#160;* It mirrors the fuller description in manifest.json and will</span><br /><span style="color: #999988; font-style: italic; ">&#160;* eventually be used to auto-generate the manifest.json schema</span><br /><span style="color: #999988; font-style: italic; ">&#160;*/</span><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">TaskListDefinition</span> {<br />&#160;&#160;label<br />&#160;&#160;value<br />}<br /><br /><span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;* This export provides the view and model definitions for the component,</span><br /><span style="color: #999988; font-style: italic; ">&#160;* which are utilized by the Unqork Runtime for configuration and execution.</span><br /><span style="color: #999988; font-style: italic; ">&#160;* Both definitions are `async` to enable on-demand loading, improving initial page load performance.</span><br /><span style="color: #999988; font-style: italic; ">&#160;*</span><br /><span style="color: #999988; font-style: italic; ">&#160;* Component export name MUST match manifest `type`</span><br /><span style="color: #999988; font-style: italic; ">&#160;*/</span><br /><span style="color: #333333; font-weight: bold; ">export</span> <span style="color: #333333; font-weight: bold; ">const</span> taskList = {<br />&#160;&#160;model: <span style="color: #333333; font-weight: bold; ">async</span> () =&gt; TaskListDefinition,<br />&#160;&#160;view: <span style="color: #333333; font-weight: bold; ">async</span> () =&gt; UnqorkTaskListComponent,<br />}<br /><br /><span style="color: #999988; font-style: italic; ">/** ========= Example Task List Item Toggled Event Model ========= **/</span><br /><br /><span style="color: #999988; font-style: italic; ">// Defines the structure of the payload for the taskListItemToggled event</span><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">TaskListItemToggledPayload</span> {<br />&#160;&#160;item = { text: <span style="color: #dd1144; ">''</span>, completed: <span style="color: #008080; ">false</span> }<br />}<br /><br /><span style="color: #999988; font-style: italic; ">// This definition describes the schema of the event that is emitted</span><br /><span style="color: #999988; font-style: italic; ">// when the user toggles an item</span><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">TaskListItemToggled</span> {<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// The name of the event</span><br />&#160;&#160;name = <span style="color: #dd1144; ">'taskListItemToggled'</span><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// The details of the toggled to-do list item</span><br />&#160;&#160;payload = <span style="color: #333333; font-weight: bold; ">new</span> TaskListItemToggledPayload()<br />}<br /><br /><span style="color: #999988; font-style: italic; ">// This export is used to expose the event to the Unqork Runtime</span><br /><span style="color: #999988; font-style: italic; ">// Note: event export name MUST match manifest `type`</span><br /><span style="color: #333333; font-weight: bold; ">export</span> <span style="color: #333333; font-weight: bold; ">const</span> taskListItemToggled = {<br />&#160;&#160;model: <span style="color: #333333; font-weight: bold; ">async</span> () =&gt; TaskListItemToggled,<br />}<br /><br /><span style="color: #999988; font-style: italic; ">/** ======== Example Task List Toggle Task List Item Operation ======== **/</span><br /><br /><span style="color: #999988; font-style: italic; ">// Operation options/schema for toggling a task list item</span><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">ToggleTaskListItemOptions</span> {<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// key of the taskList component to modify</span><br />&#160;&#160;targetKey<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// number (index) OR string (text) of the item to change</span><br />&#160;&#160;item<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// Boolean to set completed property of item to. If not provided, just toggle the existing value (e.g. true -&gt; false and false -&gt; true)</span><br />&#160;&#160;completed<br />}<br /><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">ToggleTaskListItemOperation</span> {<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">// MUST match the manifest "type" and the named export below</span><br />&#160;&#160;type = <span style="color: #dd1144; ">'toggleTaskListItem'</span><br />&#160;&#160;options = <span style="color: #333333; font-weight: bold; ">new</span> ToggleTaskListItemOptions()<br />}<br /><br /><span style="color: #333333; font-weight: bold; ">class</span> <span style="color: #990000; font-weight: bold; ">ToggleTaskListItemHandler</span> {<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">/**</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* Execute the operation.</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @param {ToggleTaskListItemOperation} operation</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;* @param {*} api Operation API: { state: { resolveByKey, set, get }, events: { emit } }</span><br /><span style="color: #999988; font-style: italic; ">&#160;&#160;&#160;*/</span><br />&#160;&#160;<span style="color: #333333; font-weight: bold; ">async</span> execute(operation, api) {<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> { targetKey, item, completed } = operation.options.config || {}<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (!targetKey) <span style="color: #333333; font-weight: bold; ">throw</span> <span style="color: #333333; font-weight: bold; ">new</span> <span style="color: #0086b3; ">Error</span>(<span style="color: #dd1144; ">'toggleTaskListItem Operation: "targetKey" is required.'</span>)<br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (item === <span style="color: #008080; ">undefined</span> || item === <span style="color: #008080; ">null</span>)<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">throw</span> <span style="color: #333333; font-weight: bold; ">new</span> <span style="color: #0086b3; ">Error</span>(<span style="color: #dd1144; ">'toggleTaskListItem Operation: "item" (index or text) is required.'</span>)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Resolve the target component state</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> target = api.state.resolveByKey(targetKey)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Expecting a list of items like the following:</span><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// [</span><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">//&#160;&#160;&#160;{ "text": "Buy groceries", "completed": false },</span><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">//&#160;&#160;&#160;{ "text": "Complete design doc", "completed": true }</span><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// ]</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> list = target?.value ?? []<br /><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (!<span style="color: #0086b3; ">Array</span>.isArray(list)) <span style="color: #333333; font-weight: bold; ">throw</span> <span style="color: #333333; font-weight: bold; ">new</span> <span style="color: #0086b3; ">Error</span>(<span style="color: #dd1144; ">'toggleTaskListItem Operation: target value is not an array.'</span>)<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Find the target index</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">let</span> index = <span style="color: #333333; font-weight: bold; ">typeof</span> item === <span style="color: #dd1144; ">'number'</span> ? item : list.findIndex((it) =&gt; <span style="color: #0086b3; ">String</span>(it?.text ?? <span style="color: #dd1144; ">''</span>) === <span style="color: #0086b3; ">String</span>(item))<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Ensure the index is within bounds, otherwise throw an error</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">if</span> (index &lt; <span style="color: #008080; ">0</span> || index &gt;= list.length) {<br />&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">throw</span> <span style="color: #333333; font-weight: bold; ">new</span> <span style="color: #0086b3; ">Error</span>(<span style="color: #dd1144; ">`toggleTaskListItem Operation: could not find item "<span style="color: #333333; font-weight: bold; ">${item}</span>".`</span>)<br />&#160;&#160;&#160;&#160;}<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Get the current item or default to an empty object with default properties</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> current = list[index] ?? { text: <span style="color: #dd1144; ">''</span>, completed: <span style="color: #008080; ">false</span> }<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Determine the next completion state based on the provided `completed` boolean or toggle the current state</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> nextCompleted = <span style="color: #333333; font-weight: bold; ">typeof</span> completed === <span style="color: #dd1144; ">'boolean'</span> ? completed : !current.completed<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Create a new list with the updated item at the specified index</span><br />&#160;&#160;&#160;&#160;<span style="color: #333333; font-weight: bold; ">const</span> newList = [...list]<br />&#160;&#160;&#160;&#160;newList[index] = { ...current, completed: nextCompleted }<br /><br />&#160;&#160;&#160;&#160;<span style="color: #999988; font-style: italic; ">// Update the target component state with the new list</span><br />&#160;&#160;&#160;&#160;api.state.set(targetKey, { value: newList })<br />&#160;&#160;}<br />}<br /><br /><span style="color: #999988; font-style: italic; ">// The following class is omitted since the operation handler does not return a result</span><br /><span style="color: #999988; font-style: italic; ">// class ToggleTaskListItemContext {</span><br /><span style="color: #999988; font-style: italic; ">//&#160;&#160;&#160;...</span><br /><span style="color: #999988; font-style: italic; ">// }</span><br /><br /><span style="color: #999988; font-style: italic; ">// Named export — MUST match manifest "type"</span><br /><span style="color: #333333; font-weight: bold; ">export</span> <span style="color: #333333; font-weight: bold; ">const</span> toggleTaskListItem = {<br />&#160;&#160;model: <span style="color: #333333; font-weight: bold; ">async</span> () =&gt; ToggleTaskListItemOperation,<br />&#160;&#160;handler: <span style="color: #333333; font-weight: bold; ">async</span> () =&gt; ToggleTaskListItemHandler,<br />&#160;&#160;<span style="color: #999988; font-style: italic; ">//This is omitted since the operation handler does not return a result</span><br />&#160;&#160;<span style="color: #999988; font-style: italic; ">//contextModel: async () =&gt; ToggleTaskListItemContext,</span><br />}</code></pre>
+                </div>
+            </div>
+            <h3>Understanding the <span class="Inline-Code">UnqorkTaskListComponent</span> Class and its Methods</h3>
+            <p>The <span class="Inline-Code">UnqorkTaskListComponent</span> class Web Component is the core of the Task List BYO&#160;component. Learn more about each of its methods below:</p>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Method</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">constructor() </span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>This method runs when the component is created. It sets up a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term258">Shadow DOM<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Shadow DOM is a web standard that allows you to create encapsulated, hidden DOM subtrees for your web components. It provides a way to scope CSS styles and JavaScript behavior within a component, preventing them from leaking out and interfering with the rest of the page.</span></a> (<span class="Inline-Code">mode: 'open'</span>) to encapsulate the component's styles and markup, preventing them from interfering with other elements on the page. It also initializes internal variables like <span class="Inline-Code">items</span> and <span class="Inline-Code">label</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">initialize(api)</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>This is the most crucial method for Unqork integration. The Unqork runtime calls this method to give the component access to the <span class="Inline-Code">api</span> object. This <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term21">API<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>APIs (application programming interfaces) are a set of protocols and definitions developers use to build and integrate application software. APIs act as the connective tissue between products and services.</span></a> is how the component reads its configuration, subscribes to state changes, and emits events back to Unqork.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">subscribeLabel()</span> and <span class="Inline-Code">subscribeValue()</span></p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>These methods demonstrate how the component subscribes to state changes. They use Unqork's <span class="Inline-Code">api.state.state$()</span> to listen for updates to the <span class="Inline-Code">label</span> and <span class="Inline-Code">value</span> properties. When a user (or another component) changes these properties in <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term23">Express View<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Express View is how your end-user views your application. Express View also lets you preview your applications to test your configuration and view the styling. This is also the view your end-users will see when interacting with your application. After configuring a module, click Preview in the Module Builder to interact with the module in Express View.</span></a>, these methods trigger, causing the component to re-render with the new data.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">_normalizeItems(value)</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>This is a private helper method that ensures the data is in the correct format. It takes a raw value (which could be a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term33">JSON<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>JSON (JavaScript Object Notation) is an open standard  file and data interchange format. Unqork uses JSON for submission (record) data.</span></a> string or an array) and converts it into a clean, standardized array of <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term91">objects<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>An object is a type of data structure that represents a single, self-contained entity that acts as a container for the characteristics of that entity.</span></a> with <span class="Inline-Code">text</span> and <span class="Inline-Code">completed</span> properties. That way, the data reliable for rendering.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">render()</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>This method handles rendering the component and adding event listeners. It takes the component's internal data (<span class="Inline-Code">label</span>, <span class="Inline-Code">items</span>) and generates the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term42">HTML<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>HTML (Hyper Text Markup Language) is the standard markup language for for achieving font, color, graphic, and hyperlink effects when creating web pages.</span></a> view. It also sets up a <span class="Inline-Code">change</span> event listener on the root element. When a user clicks a checkbox, this listener triggers. Then, it updates the component's state using <span class="Inline-Code">this.api.state.set()</span> and emits an event.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-AltBody">
+                            <p><span class="Inline-Code">emitItemToggledEvent()</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-AltBody">
+                            <p>This method uses the <span class="Inline-Code">api.events.emit()</span> function to send an event back to the Unqork runtime. Doing so lets other parts of the Unqork application respond when a user checks or unchecks a task item.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p><span class="Inline-Code">view()</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-Body1">
+                            <p> This method is a pure function that generates the component's HTML markup. It takes the label and items data and uses JavaScript's <span class="Inline-Code">map()</span> and <span class="Inline-Code">join()</span> to create a dynamic list of checkboxes.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Understanding the <span class="Inline-Code">taskList</span> and <span class="Inline-Code">taskListItemToggled</span> Exports</h3>
+            <p>These exports act as the component's manifest, providing the Unqork runtime with the necessary data to use the component.</p>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Export</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p><span class="Inline-Code">taskList </span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>This object exports the <span class="Inline-Code">model</span> (the component's data schema) and the <span class="Inline-Code">view</span> (the component itself). The Unqork platform uses this data to configure the component's properties and render it correctly.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                            <p><span class="Inline-Code">taskListItemToggled</span>
+                            </p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-AltBody">
+                            <p>This object defines a custom event. It exports a <span class="Inline-Code">model</span> that describes the structure of the event's payload. For example, <span class="Inline-Code">name</span> and <span class="Inline-Code">payload</span>. Doing so lets other parts of the Unqork platform use and understand the event that the component emits.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Understanding the <span class="Inline-Code">ToggleTaskListItemHandler</span> Class and <span class="Inline-Code">toggleTaskListItem</span> Export</h3>
+            <p>This section defines a custom <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05018a-Introduction_Operations_Builder.htm#Understa2" target="_blank">Unqork operation</a>, which is a server-side action that can be executed from a workflow or other part of the Unqork application.</p>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Export</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyE-Term-Body1">
+                            <p class="nowrap"><span class="Inline-Code">ToggleTaskListItemHandler</span> Class</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyD-Description-Body1">
+                            <p>This class contains the <span class="Inline-Code">execute()</span> method, which defines the operation's logic.</p>
+                            <p><span class="Inline-Code">ToggleTaskListItemHandler</span> performs the following:</p>
+                            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: 9.599998px;" />
+                                <col style="width: 38.4px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                                    </td>
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Takes an <span class="Inline-Code">operation</span> object and the <span class="Inline-Code">api</span>.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: 9.599998px;" />
+                                <col style="width: 38.4px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                                    </td>
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Validates the incoming <span class="Inline-Code">targetKey</span>&#160;and <span class="Inline-Code">item</span> options.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: 9.599998px;" />
+                                <col style="width: 38.4px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                                    </td>
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Uses <span class="Inline-Code">api.state.resolveByKey()</span> to find the target component's state.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: 9.599998px;" />
+                                <col style="width: 38.4px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                                    </td>
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Locates the correct item in the list and updates its <span class="Inline-Code">completed</span> property.</td>
+                                </tr>
+                            </table>
+                            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                                <col style="width: 9.599998px;" />
+                                <col style="width: 38.4px;" />
+                                <col style="width: auto;" />
+                                <tr>
+                                    <td valign="top" />
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                                    </td>
+                                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Uses <span class="Inline-Code">api.state.set()</span> to update the state of the target component, which triggers the component's subscription to re-render.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-AltBody">
+                            <p><span class="Inline-Code">toggleTaskListItem</span> Export</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-AltBody">
+                            <p>This object exports the <span class="Inline-Code">model</span> (the operation's data schema) and the <span class="Inline-Code">handler</span> (the class containing the logic). Doing so enables the Unqork platform to execute this custom operation.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Resources</h3>
+            <p>To learn more about implementing assets, view the following resources:</p>
+            <div class="gridTwo">
+                <div class="CardLink">
+                    <h2>Custom Component SDK</h2>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00506-BYO-Component-SDK.htm" target="_self" class="CardLink">Extend component functionality in the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Custom Component</h2>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00505-BYO-Component.htm" target="_self" class="CardLink">Understand the state, interface, and events of a custom component.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Custom Events</h2>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00511-BYO-Events.htm" target="_self" class="CardLink">Learn more about creating custom events for use in the <span class="mc-variable General.OB variable">Operations Builder</span>.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Custom Operations</h2>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00512-BYO-Operations.htm" target="_self" class="CardLink">Learn more about creating custom operations for use in the <span class="mc-variable General.OB variable">Operations Builder</span>..</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2><a name="Create-BYO-Package"></a>Create the BYO&#160;Task List Package</h2>
+            <p>After the asset JavaScript and manifest.json files are complete, compress them into a BYO&#160;package.</p>
+            <p>To compile a file using Terminal (Mac) or Command Prompt (Windows):</p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Using the command line prompt, navigate to the directory containing the <span class="Inline-Code">taskList.js</span> and <span class="Inline-Code">manifest.json</span> files. For example, <span class="Inline-Code">cd C:\Users\UserName\Desktop\taskListAsset</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Execute the following command: <span class="Inline-Code"> tar -cvzf taskList.tar.gz manifest.json taskList.js</span>.<br /></td>
+                </tr>
+            </table>
+            <div class="image-indent">
+                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../Resources/Images/A00-Unqork_Platform/BYO/byoTaskList/taskListPackage.jpg" data-mc-popup-alt="A static image displaying the Terminal and the tar.gz prompt."><img class="MCPopupThumbnail img imgwide700px" data-mc-width="649" data-mc-height="175" src="../Resources/Images/A00-Unqork_Platform/BYO/byoTaskList/taskListPackage_thumb_0_0.jpg" alt="A static image displaying the Terminal and the tar.gz prompt." tabindex="" /></a>
+                </p>
+            </div>
+            <div class="indent">
+                <p>The <span class="Inline-Code">taskList.js</span> file and <span class="Inline-Code">manifest.json</span> are added to the <span class="Inline-Code">tar.gz</span> file in the same folder they're located in.</p>
+            </div>
+            <div class="indent">
+                <div class="Note">
+                    <p>The steps above use the <span class="Inline-Code">tar</span> command and the following options:</p>
+                    <div class="indent">
+                        <p><span class="Inline-Code">-c</span>: Creates a new archive.</p>
+                        <p><span class="Inline-Code">-z</span>: Compresses the archive using <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term255">gzip<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Gzip is a file format and software application used for file compression and decompression.</span></a>.</p>
+                        <p><span class="Inline-Code">-v</span>: Lists the files in the command line as they are added to archive.</p>
+                        <p><span class="Inline-Code">-f</span>: Specifies the file name for the archived files.</p>
+                    </div>
+                </div>
+            </div>
+            <h3>Resources</h3>
+            <p>Learn more about BYO Packages using the following resource:</p>
+            <div class="CardLink">
+                <h2>Create a BYO Package</h2>
+                <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00502-BYO-Create-Package.htm" target="_self" class="CardLink">Discover the structure and content of a BYO&#160;Package</a>
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2><a name="Upload-BYO-Package"></a>Upload the BYO&#160;Task List Package</h2>
+            <p>After creating the <span class="Inline-Code">taskList.tar.gz</span> package, upload it to the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span> using the <a href="https://docs.unqork.io/Content/D-Administration/D05002-Custom_Assets_Administration.htm" target="_blank">Custom Assets Administration</a> page:</p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">From the UDesigner homepage, click <span class="Unq-BlackBlueheader-Btn">Administration</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Under <span class="ico-assets">Assets</span>, click <span class="Unq-TealText-ComponentTray">Custom Assets Administration</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Click <span class="Unq-Teal-Btn">+&#160;Create new</span>. The <span class="BoldText">Create Asset</span> modal displays.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Under <span class="Unq-DarkGreyText-ComponentConfigField">File Upload</span>, click or drag a BYO package from your local device to the upload window.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Click <span class="Unq-Teal-Btn">Scan File</span>.&#160;The package details display.</td>
+                </tr>
+            </table>
+            <div class="image-indent">
+                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../Resources/Images/A00-Unqork_Platform/BYO/byoTaskList/createAssetTaskList1.jpg" data-mc-popup-alt="A static image displaying the Create Asset modal."><img class="MCPopupThumbnail img imgwide800px" data-mc-width="993" data-mc-height="584" src="../Resources/Images/A00-Unqork_Platform/BYO/byoTaskList/createAssetTaskList1_thumb_0_0.jpg" alt="A static image displaying the Create Asset modal." tabindex="" /></a>
+                </p>
+            </div>
+            <div class="indent">
+                <p class="Note">If an import error occurs, review the package's contents for errors and name mismatches. </p>
+            </div>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Click <span class="Unq-Teal-Btn">Review Assets</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">Review the asset's details including <span class="ico-byoComponent">C</span>omponents, <span class="ico-byoEvent">E</span>vents, and <span class="ico-byoOperation">O</span>perations.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">Click <span class="Unq-Teal-Btn">Confirm &amp; Create</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Review the <span class="Unq-Status-Orange">Library Usage Acknowledgment and Liability Agreement</span>. Click the <span class="BoldText">☐</span> (<span class="BoldText">checkbox</span>) to acknowledge the agreement.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>10.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="10.">Click <span class="Unq-Teal-Btn">Create Asset</span>.<br />The asset package displays in the Custom Asset's <span class="BoldText">Packages</span> list. The package's individual assets display in the Assets tab's <span class="BoldText">Assets</span> list. The assets are now available in the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span> for all applications in the environment.</td>
+                </tr>
+            </table>
+            <h3>Resources</h3>
+            <p>Learn more about the Custom Assets Administration page using the following resource:</p>
+            <div class="CardLink">
+                <h2>Custom&#160;Assets Administration</h2>
+                <p><a href="https://docs.unqork.io/Content/D-Administration/D05002-Custom_Assets_Administration.htm" target="_self" class="CardLink">Upload and view BYO custom assets for the environment.</a>
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <h2><a name="Test-Asset"></a>Test the Task List Component</h2>
+            <p>Now that the BYO&#160;Task List component is in the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>, test its functionality in the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span> and <span class="mc-variable General.ExpressView variable">Express View</span>. This example assumes you are configuring a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term183">Vega (v2.0)<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The Vega (v 2.0.0) runtime is the next-generation engine of the UDesigner platform. Vega uses cutting-edge technologies to improve the Creator and end-user experience.</span></a>&#160; <span class="mc-variable General.module variable">module</span>.</p>
+            <p>For this example,  test the following functions:</p>
+            <ul>
+                <li>
+                    <p><span class="BoldText">Task List Configuration Drawer</span>: Verify each setting is functional.</p>
+                </li>
+                <li>
+                    <p><span class="BoldText"><span class="Inline-Code">taskListItemToggledEvent</span> Event</span>: Verify the event emits when clicking a task list item.</p>
+                </li>
+                <li>
+                    <p><span class="BoldText"><span class="Inline-Code">toggleTaskListItem</span> Operation</span>: Verify the operation accepts the following keys and values: <span class="Inline-Code">targetKey</span> (task list property ID), <span class="Inline-Code">item</span> (task list item), and <span class="Inline-Code">completed</span> (Checked/Unchecked).</p>
+                </li>
+            </ul>
+            <h3>Configure the Custom Component</h3>
+            <p>The Custom Component contains a list of all BYO components in the environment. Select the Example Task List, then configure it to test settings, events, and operations. </p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">In the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span>, drag and drop a Custom Component onto your canvas.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <a href="#" class="MCTextPopup PropID MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPropID MCTextPopupHotSpot_ MCTextPopupHotSpot_PropID" glossTerm="Glossary.Term2">Property ID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A Property ID is the unique field ID used by Unqork to track and link components in your module.</span></a>  field, enter <span class="Unq-DarkPurple-PropertyIdText">byoTaskList</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">From the <span class="Unq-DarkGreyText-ComponentConfigField">Select Component</span> drop-down, enter or select <span class="Unq-Component-Action-Arrow">Example Task List</span>. The component's configuration populates.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Under <span class="BoldText">Object 1</span>, in the text field, enter <span class="Unq-Component-Action">First Item</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Set <span class="BoldText">Object 1</span> to <span class="ico-checkedBox">(</span><span class="BoldText">Completed</span>). </td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Under <span class="BoldText">Object 2</span>, in the text field, enter <span class="Unq-Component-Action">Second Item</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">Under <span class="BoldText">Object 3</span>, in the text field, enter <span class="Unq-Component-Action">Third Item</span>.</td>
+                </tr>
+            </table>
+            <h4>Configure the byoTaskList Events and Operations</h4>
+            <p>While remaining in the configuration drawer, set up  the BYO event <span class="Inline-Code">taskListItemToggled</span> to hide a button by setting its <span class="Inline-Code">display.hidden</span> property to <span class="Inline-Code">false</span>.</p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Navigate to the <span class="BoldText">Actions</span> settings.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Next to <span class="BoldText">Events &amp; Operations</span>, click <span class="Unq-White-Btn">Edit</span>. The Events &amp; Operations modal displays.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">From the <span class="Unq-DarkGreyText-ComponentConfigField">Select an Event</span> drop-down, enter or select <span class="Unq-Component-Action-Arrow">Example Task List Item Toggle <span class="Unq-Status-Blue">CUSTOM</span></span>. This custom event was imported as part of the BYO&#160;Task List package.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Click <span class="Unq-White-Btn">Add</span>. </td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Click <span class="Unq-White-Btn">+Add Operation</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">From the <span class="Unq-DarkGreyText-ComponentConfigField">Operation Type</span> drop-down, select <span class="Unq-table-dropdown">Set Property</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">In the <span class="Unq-DarkGreyText-ComponentConfigField">Target Key</span> field, enter <span class="Unq-Component-Action">btnCheckSecondItem</span>. You'll set the <span class="Unq-DarkPurple-PropertyIdText">btnCheckSecondItem</span> <span class="Unq-TealText-ComponentTray"><img src="../Resources/Images/Inline/button_component_icon.png" alt="Button component Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.4em;" /> Button</span> component in the next section.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">In the <span class="Unq-DarkGreyText-ComponentConfigField">Property ID</span>&#160;field, enter <span class="Unq-Component-Action">display.hidden</span>. This value targets the Button component's hidden key, which controls the visibility of the button.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">In the <span class="Unq-DarkGreyText-ComponentConfigField">Value</span> field, enter <span class="Unq-Component-Action">false</span>. This value hides the button when the operation triggers.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>10.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="10.">Click <span class="Unq-White-Btn">Save</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>11.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="11.">Click <span class="Unq-White-Btn">Close</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>12.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="12.">Click <span class="Unq-Teal-Btn">Save Component</span>.</td>
+                </tr>
+            </table>
+            <h3>Configure the Button Component</h3>
+            <p>Configure a Button component to emit an <span class="BoldText">On Click</span> event. Configure the event to trigger the BYO <span class="Inline-Code">toggleTaskListItem</span> operation . When this operation triggers, it checks the second item in the task list. </p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Drag and drop a <span class="Unq-TealText-ComponentTray"><img src="../Resources/Images/Inline/button_component_icon.png" alt="Button component Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.4em;" /> Button</span> component onto your canvas, placing it above the <span class="Unq-DarkPurple-PropertyIdText">byoTaskList</span> Custom Component.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <a href="#" class="MCTextPopup PropID MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPropID MCTextPopupHotSpot_ MCTextPopupHotSpot_PropID" glossTerm="Glossary.Term2">Property ID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A Property ID is the unique field ID used by Unqork to track and link components in your module.</span></a>  field, enter <span class="Unq-DarkPurple-PropertyIdText">btnCheckSecondItem</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">In the <span class="Unq-NeutralGreyText-ComponentConfigField">Label Text</span> field, enter <span class="Unq-Component-Action">Check Second Item</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Navigate to the <span class="BoldText">Actions</span> settings.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">From the <span class="BoldText">Action Type</span> drop-down, select <span class="Unq-table-dropdown">Event</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Next to <span class="BoldText">Events &amp; Operations</span>, click <span class="Unq-White-Btn">Edit</span>. The Events &amp; Operations modal displays.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">From the <span class="Unq-DarkGreyText-ComponentConfigField">Select an Event</span> drop-down, enter or select <span class="Unq-Component-Action-Arrow">On Click</span>. This event emits when the user clicks the button.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">Click <span class="Unq-White-Btn">Add</span>. </td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Click <span class="Unq-White-Btn">+Add Operation</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>10.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="10.">From the <span class="Unq-DarkGreyText-ComponentConfigField">Operation Type</span> drop-down, select <span class="Unq-table-dropdown">Example Task List Toggle Task List Item <span class="Unq-Status-Blue">CUSTOM</span></span>. This custom operation was imported as part of the BYO&#160;Task List package.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>11.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="11.">In the <span class="BoldText">Config</span> field, enter the following JSON code: <span class="Inline-Code">{"targetKey":"byoTaskList","item":"Second Item","completed":true}</span>. This value checks the <span class="Unq-DarkPurple-PropertyIdText">byoTaskList</span> Custom Component's second item in the list.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>12.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="12.">Click <span class="Unq-White-Btn">Save</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>13.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="13.">Click <span class="Unq-White-Btn">Close</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>14.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="14.">Click <span class="Unq-Teal-Btn">Save Component</span>.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>15.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="15."><span class="Unq-Teal-Btn">Save</span> your <span class="mc-variable General.module variable">module</span>.</td>
+                </tr>
+            </table>
+            <p>Your completed <span class="mc-variable General.module variable">module</span> looks like the following:</p>
+            <div class="image-center">
+                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../Resources/Images/A00-Unqork_Platform/BYO/moduleBuilder.jpg" data-mc-popup-alt="A static image displaying the "><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1341" data-mc-height="319" src="../Resources/Images/A00-Unqork_Platform/BYO/moduleBuilder_thumb_0_0.jpg" alt="A static image displaying the " tabindex="" /></a>
+                </p>
+            </div>
+            <h3>Preview and Test the <span class="mc-variable General.ModuleUppercase variable">Module</span></h3>
+            <p><span class="Unq-White-Btn">Preview</span> your <span class="mc-variable General.module variable">module</span> in <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term23">Express View<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Express View is how your end-user views your application. Express View also lets you preview your applications to test your configuration and view the styling. This is also the view your end-users will see when interacting with your application. After configuring a module, click Preview in the Module Builder to interact with the module in Express View.</span></a>. Check for the following functionality:</p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">On <span class="mc-variable General.module variable">module</span> load, the list's First Item is set to <span class="ico-checkedBox">(</span><span class="BoldText">checked</span>). Doing so verifies the <span class="Unq-DarkPurple-PropertyIdText">byoTaskList</span> Custom Component's configuration setting <span class="Unq-DarkGreyText-ComponentConfigField">Completed</span> is functioning.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click the <span class="Unq-Round-Teal-Btn">Check Second Item</span> button, the list's Second Item sets to <span class="ico-checkedBox">(</span><span class="BoldText">checked</span>). This verifies the <span class="Inline-Code">toggleTaskListItem</span> operation is functioning.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Click any item in the list, the <span class="Unq-Round-Teal-Btn">Check Second Item</span> button disappears. This verifies the <span class="Inline-Code">taskListItemToggled</span> event is functioning.</td>
+                </tr>
+            </table>
+            <p class="centerText">
+                <video controls="" muted="" loop="" autoplay="" title="" class="_nesetedVideo500_0">
+                    <source src="../Resources/Images/A00-Unqork_Platform/BYO/byoTaskList/expressViewCheckList.webm" type="video/webm">Your browser does not support the video tag.</source>
+                </video>
+            </p>
+            <p>If the custom asset functions as intended, then its ready to be used by Creators in the development of Unqork applications.</p>
+            <p>If the Custom Component generates errors, or is missing features:</p>
+            <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Create a copy of the current package and its contents.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Update the package's required files.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Change the package's version number.</td>
+                </tr>
+            </table>
+            <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                <col style="width: 9.599998px;" />
+                <col style="width: 38.4px;" />
+                <col style="width: auto;" />
+                <tr>
+                    <td valign="top" />
+                    <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                    </td>
+                    <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Update the package by referring to the <span class="BoldText">Package Management</span> section in our BYO&#160;Best Practices article:</td>
+                </tr>
+            </table>
+            <div class="indent">
+                <div class="gridTwo">
+                    <div class="CardLink">
+                        <h2>BYO&#160;Best Practices - Package Management</h2>
+                        <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00510-BYO-Best-Practices.htm#Package-Management" target="_blank" class="CardLink">Get tips on versioning, deleting, updating, and promoting packages.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
