@@ -1,0 +1,405 @@
+/*<meta />*/
+
+@media only screen and (max-width: 860px)
+{
+	.search-bar
+	{
+		width: 100%;
+	}
+
+	.knowledge-panel-container.micro-content-truncated-mode .micro-response
+	{
+		max-height: 200px;
+	}
+
+	.mc-component .featured-snippets-container
+	{
+		
+	}
+
+	.mc-component #knowledge-panel
+	{
+		order: 0;
+		display: none;
+	}
+
+	.mc-component #search-results-flex
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container
+	{
+		
+	}
+
+	.mc-component #knowledge-panel-middle
+	{
+		display: block;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-drop-down-button
+	{
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-expanded .micro-content-drop-down-button
+	{
+		background: transparent url('Images/arrow-up.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-up.png') no-repeat center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-collapsed .micro-content-drop-down-button
+	{
+		background: transparent url('Images/arrow-down.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-down.png') no-repeat center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-phrase span
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-phrase
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container.micro-content-optional-phrase .micro-content-phrase
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container.micro-content-truncated-mode .micro-response
+	{
+		max-height: 200px;
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title a
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title a:visited
+	{
+		
+	}
+
+	.mc-component #resultList .glossary .term a:visited
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title a:visited
+	{
+		
+	}
+
+	.mc-component #resultList h3.title a:visited
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title a:focus
+	{
+		
+	}
+
+	.mc-component #resultList .glossary .term a:focus
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title a:focus
+	{
+		
+	}
+
+	.mc-component #resultList h3.title a:focus
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title a:hover
+	{
+		
+	}
+
+	.mc-component #resultList .glossary .term a:hover
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title a:hover
+	{
+		
+	}
+
+	.mc-component #pagination a:hover
+	{
+		
+	}
+
+	.mc-component #resultList h3.title a:hover
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-title a:active
+	{
+		
+	}
+
+	.mc-component #resultList .glossary .term a:active
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title a:active
+	{
+		
+	}
+
+	.mc-component #resultList h3.title a:active
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-url cite
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-response-url
+	{
+		
+	}
+
+	.mc-component .knowledge-panel-container .micro-content
+	{
+		background-position: center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-expand
+	{
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-expanded .micro-content-expand
+	{
+		background: transparent url('Images/arrow-up.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-up.png') no-repeat center center;
+	}
+
+	.mc-component .knowledge-panel-container .micro-content-collapsed .micro-content-expand
+	{
+		background: transparent url('Images/arrow-down.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-down.png') no-repeat center center;
+	}
+
+	.mc-component .knowledge-panel-container.micro-content-truncated-mode .micro-content-expand-transition
+	{
+		background: -moz-linear-gradient(top, transparent 0%, #ffffff 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,transparent), color-stop(100%,#ffffff));
+		background: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+		background: -o-linear-gradient(top, transparent 0%,#ffffff 100%);
+		background: -ms-linear-gradient(top, transparent 0%,#ffffff 100%);
+		background: linear-gradient(transparent 0%,#ffffff 100%);
+		-pie-background: linear-gradient(transparent, #ffffff);
+	}
+
+	.mc-component #resultList .glossary .definition
+	{
+		
+	}
+
+	.mc-component #resultList .glossary
+	{
+		background-position: center center;
+	}
+
+	.mc-component #resultList .glossary .term
+	{
+		
+	}
+
+	.mc-component #resultList .glossary .term a
+	{
+		
+	}
+
+	.mc-component h1#results-heading
+	{
+		
+	}
+
+	.mc-component #results-heading
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-content-drop-down-button
+	{
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	.mc-component .featured-snippets-container .micro-content-expanded .micro-content-drop-down-button
+	{
+		background: transparent url('Images/arrow-up.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-up.png') no-repeat center center;
+	}
+
+	.mc-component .featured-snippets-container .micro-content-collapsed .micro-content-drop-down-button
+	{
+		background: transparent url('Images/arrow-down.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-down.png') no-repeat center center;
+	}
+
+	.mc-component .featured-snippets-container .micro-content-phrase span
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-content-phrase
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container.micro-content-optional-phrase .micro-content-phrase
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container.micro-content-truncated-mode .micro-response
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-content-expand
+	{
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	.mc-component .featured-snippets-container .micro-content-expanded .micro-content-expand
+	{
+		background: transparent url('Images/arrow-up.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-up.png') no-repeat center center;
+	}
+
+	.mc-component .featured-snippets-container .micro-content-collapsed .micro-content-expand
+	{
+		background: transparent url('Images/arrow-down.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Default/Stylesheets/Components/Images/arrow-down.png') no-repeat center center;
+	}
+
+	.mc-component .featured-snippets-container.micro-content-truncated-mode .micro-content-expand-transition
+	{
+		background: -moz-linear-gradient(top, transparent 0%, #ffffff 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,transparent), color-stop(100%,#ffffff));
+		background: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+		background: -o-linear-gradient(top, transparent 0%,#ffffff 100%);
+		background: -ms-linear-gradient(top, transparent 0%,#ffffff 100%);
+		background: linear-gradient(transparent 0%,#ffffff 100%);
+		-pie-background: linear-gradient(transparent, #ffffff);
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title a
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-title
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-url cite
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-response-url
+	{
+		
+	}
+
+	.mc-component .featured-snippets-container .micro-content
+	{
+		background-position: center center;
+	}
+
+	.mc-component #pagination
+	{
+		line-height: 2.5em;
+	}
+
+	.mc-component #pagination a
+	{
+		
+	}
+
+	.mc-component #pagination a#selected
+	{
+		
+	}
+
+	.mc-component #resultList .description
+	{
+		
+	}
+
+	.mc-component #resultList .gs-snippet
+	{
+		
+	}
+
+	.mc-component #resultList h3.title a
+	{
+		
+	}
+
+	.mc-component #resultList h3.title
+	{
+		
+	}
+
+	.mc-component #resultList .url cite
+	{
+		
+	}
+
+	.mc-component #resultList
+	{
+		
+	}
+
+	.mc-component .phrase-suggest
+	{
+		
+	}
+
+	.mc-component .phrase-suggest a
+	{
+		
+	}
+}
+

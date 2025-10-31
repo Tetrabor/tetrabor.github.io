@@ -8415,7 +8415,7 @@ p.followAlong:is(p.followAlong),
 p.EAP:is(p.EAP),
 p.openBeta:is(p.openBeta)
 {
-  display: flex;
+  display: block;
   align-items: flex-start;
   gap: .15rem;
   font-family: Inter-Var;

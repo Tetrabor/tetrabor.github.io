@@ -1,0 +1,1 @@
+define({'/Content/M-APIs_Integrations/M06-Integration_Gateway/M06007_Unqork_Connector_Full_Payload.htm':{i:[0],t:['How to: Retrieve a Payload Using an Unqork  Connector'],b:['']}});

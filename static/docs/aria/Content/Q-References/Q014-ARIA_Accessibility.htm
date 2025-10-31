@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="" data-mc-conditions="Default.RELEASE READY">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../Skins/Favicons/favicon-16x16.png" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>ARIA (Accessible Rich Internet Applications) Accessibility Settings Reference</title>
+        <link href="../Resources/TableStyles/2022-AltRows_Sort.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="canonical" href="https://docs.unqork.io/Content/Q-References/Q014-ARIA_Accessibility.htm" />
+        <link href="../Resources/Stylesheets/2024Styles.css" rel="stylesheet" type="text/css" />
+        <meta name="Authors" content="Cliff Coss (Editor),Michael Sheleman (AidenAI Writer)" />
+        <meta name="description" content="ARIA (Accessible Rich Internet Applications) accessibility settings improve web accessibility by giving screen readers and other assistive technologies more information about user interface elements." />
+        <meta name="theme-color" content="#1B4F64" />
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <style>
+		.body-container, .body {
+		background: var(--grey-50) !important;
+		background-color: var(--grey-50) !important;
+		}
+	</style>
+    <body>
+        <h1><a name="Aria_Roles"></a>ARIA (Accessible Rich Internet Applications) Accessibility Settings Reference</h1>
+        <div class="section" style="overflow: hidden;">
+            <h2>
+                <MadCap:conditionalText data-mc-conditions="Default.Article/In-Product Help"><a name="Overview"></a>Overview</MadCap:conditionalText>
+            </h2>
+            <p><strong>ARIA (Accessible Rich Internet Applications) accessibility settings</strong> improve web accessibility by giving <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term124">screen readers<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Screen Readers are a browser accessbility tool used to produce an audio description of a webpage. 
+Screen readers speak the text and alternate text of a webpage.</span></a> and other assistive technologies more information about user interface elements. Some components in Unqork support the <span class="Unq-NeutralGreyText-ComponentConfigField">ARIA Role</span> (<span class="Inline-Code">role</span>) and <span class="Unq-NeutralGreyText-ComponentConfigField">Aria Label</span> (<span class="Inline-Code">aria-label</span>) settings.</p>
+            <p><a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term22">Creators<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Unqork Users, or Designer Users; is anyone who is inside the Unqork platform.</span></a> can customize a component’s <span class="Unq-NeutralGreyText-ComponentConfigField">ARIA Role</span> (<span class="Inline-Code">role</span>) setting using  predefined values to provide semantic meaning to content. While the <span class="Unq-NeutralGreyText-ComponentConfigField">Aria Label</span> (<span class="Inline-Code">aria_label</span>) setting lets Creators enter a semantic description of their choosing:</p>
+            <ul>
+                <li>
+                    <p><span class="Unq-NeutralGreyText-ComponentConfigField">ARIA Role</span> (<span class="Inline-Code">role</span>): Identifies the purpose of an element when its function is not clear from the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term42">HTML<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>HTML (Hyper Text Markup Language) is the standard markup language for for achieving font, color, graphic, and hyperlink effects when creating web pages.</span></a> alone. For example, a webpage might contain a custom button using a <span class="BoldText">&lt;div&gt;</span> for styling purposes. By default, a <span class="BoldText">&lt;div&gt;</span> has no <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term242">semantic<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Semantic HTML uses HTML elements to clearly describe their meaning, rather than just their appearance, to structure web content for better readability and accessibility for both humans and machines.</span></a> meaning, so screen readers will not know it’s meant to act like a button. So,  assign the <span class="Inline-Code">role</span> attribute with a value of <span class="Inline-Code">button</span> to define the element’s purpose as button.</p>
+                </li>
+                <li>
+                    <p><span class="Unq-NeutralGreyText-ComponentConfigField">Aria Label</span> (<span class="Inline-Code">aria_label</span>): Provides a readable name for elements that might not have visible text. For example, a <span class="BoldText">&lt;button&gt;</span> element labeled <span class="BoldText">Next</span> is announced by a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term121">screen reader<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A screen reader is a browser accessibility tool that plays an audio description of the text and alternate text on a website.</span></a> as "Next". Adding an <span class="Inline-Code">aria_label</span> attribute  with the value <span class="Inline-Code">go to next page</span> announces the <span class="BoldText">&lt;button&gt;</span> element as "Go to next page" instead.</p>
+                </li>
+            </ul>
+            <p>Used together or separately, these attributes help <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> understand and interact with web content. For best results, use them only when native <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term42">HTML<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>HTML (Hyper Text Markup Language) is the standard markup language for for achieving font, color, graphic, and hyperlink effects when creating web pages.</span></a> does not meet accessibility needs.</p>
+            <p class="LearnMore">Discover how to audit a page's accessibility in Chrome with Google's Accessibility Features article: <a href="https://developer.chrome.com/docs/devtools/accessibility/reference" target="_blank" class="external">https://developer.chrome.com/docs/devtools/accessibility/reference</a>.</p>
+        </div>
+        <div class="section">
+            <h2><a name="Supported_Components"></a>ARIA&#160;Supported Components</h2>
+            <p>The following components support  either the <span class="Unq-NeutralGreyText-ComponentConfigField">ARIA Role</span> (<span class="Inline-Code">role</span>) or <span class="Unq-NeutralGreyText-ComponentConfigField">Aria Label</span> (<span class="Inline-Code">aria_label</span>) attributes, or both:</p>
+            <div class="gridTwo">
+                <div class="CardLink">
+                    <h2>Button Component</h2>
+                    <p><a href="https://docs.unqork.io/Content/A03-ModEditor-Secondary/A03002A-Button_Component.htm" target="_self" class="CardLink">Learn how to create interactive buttons for your end-users.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Columns Component</h2>
+                    <p><a href="https://docs.unqork.io/Content/A04-ModEditor-Display_Layout/A04005-Columns_Component.htm" target="_self" class="CardLink">Learn how to create interactive dashboard modals for your end-users to add, edit, and delete entries.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Field Group Component</h2>
+                    <p><a href="https://docs.unqork.io/Content/A04-ModEditor-Display_Layout/A04011-Field_Group_Component.htm" target="_self" class="CardLink">Learn how to group and organize components in the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span>.</a>
+                    </p>
+                </div>
+                <div class="CardLink">
+                    <h2>Panel Component</h2>
+                    <p><a href="https://docs.unqork.io/Content/A04-ModEditor-Display_Layout/A04006-Panel_Component.htm" target="_self" class="CardLink">Learn how to create pop-up modals and import <span class="mc-variable General.module variable">module</span>s into other <span class="mc-variable General.module variable">module</span>s in the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span>.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2><a name="ARIA_Roles_List"></a>Unqork ARIA&#160;Roles</h2>
+            <p>The <span class="Unq-NeutralGreyText-ComponentConfigField">ARIA Role</span> (<span class="Inline-Code">role</span>) setting uses predefined values that are assigned under an Unqork component's Accessibility settings. It's important to assign the correct <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term244">ARIA<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>ARIA (Accessible Rich Internet Applications) is a set of attributes used in HTML to enhance the accessibility of web content, particularly dynamic or interactive web pages, for users who rely on assistive technologies like screen readers.</span></a>&#160;role during development, otherwise an application might affect its <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term113">SEO<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Search Engine Optimization (SEO) is the process used to improve a website's content relevance and techical configuration. 
+Search Engines rank public websites based on their SEO performance and popularity.</span></a> rating and become less accessible.</p>
+            <p class="LearnMore">To get an in-depth overview of ARIA roles, visit the Mozilla  WAI-ARIA Roles reference guide:  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles" target="_blank">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles</a>.</p>
+            <p>The list below contains the available role attributes in Unqork, and a description of each role.</p>
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/2022-AltRows_Sort.css');width: 100%;" class="TableStyle-2022-AltRows_Sort" cellspacing="0">
+                <col class="TableStyle-2022-AltRows_Sort-Column-Term" />
+                <col class="TableStyle-2022-AltRows_Sort-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows_Sort-Head-Header1">
+                        <th class="TableStyle-2022-AltRows_Sort-HeadE-Term-Header1">ARIA Role</th>
+                        <th class="TableStyle-2022-AltRows_Sort-HeadD-Description-Header1">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>alert</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Notifies the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-user<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> with an important or time-sensitive message.
+
+Use this role for information that requires the end-user's immediate attention.</p>
+                            <p> Examples include:</p>
+                            <ul>
+                                <li>
+                                    <p>An invalid value entered in a field.</p>
+                                </li>
+                                <li>
+                                    <p>The login session is about to expire.
+</p>
+                                </li>
+                                <li>
+                                    <p>A lost connection to the server preventing local changes from being saved.</p>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>alertdialog</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Notifies <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> with an important message. For example, error messages that require confirmation.
+
+Use the <span class="Inline-Code">alertdialog</span> role  for alert messages that have interactive confirmation elements. If an alert dialog only contains static content, and has no interactive elements, use the <span class="Inline-Code">alert</span> role.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>application</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Communicates to the screen reader that an element and its children should be treated as a desktop application, and not to use traditional HTML interpretation techniques. Use this role to define dynamic and desktop-like web applications. Most mobile and desktop web applications are not considered applications.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>article</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Represents a section of a document, page, or site that can be viewed as a complete document.  Use this role for content items like comments, forum posts, or other articles grouped on a single page.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>banner</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Defines a website header. Website headers might include a logo, company name, search field, and navigation bar. Unlike the <span class="Inline-Code">heading</span> role, the <span class="Inline-Code">banner</span> role is for repeating site-wide content located at the top of every page.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>columnheader</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies an element nested as a cell in a row of a grid or table that contains header information for a column.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>complementary</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Defines a supporting section that relates to the main content. Use this role when your application contains side navigation or callout boxes.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>contentinfo</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Defines a website footer. Website footers might include copyright information, navigation links, and privacy statements. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>definition</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Indicates the element is a term or concept definition.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>dialog</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term4">modal<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A&#160;modal is a window that appears on top of the content you are currently viewing.</span></a>  separate from the rest of the page. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>directory</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a list of references in a static table of contents, including nested lists.
+
+</p>
+                            <p class="Warning">The directory role is deprecated in <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term244">ARIA<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>ARIA (Accessible Rich Internet Applications) is a set of attributes used in HTML to enhance the accessibility of web content, particularly dynamic or interactive web pages, for users who rely on assistive technologies like screen readers.</span></a> 1.2. For more information on ARIA&#160;1.2, view the following <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term243">W3C<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The World Wide Web Consortium (W3C), founded in 1994, is an international community that develops open standards to ensure the long-term growth and evolution of the web, focusing on accessibility, internationalization, privacy, and security.</span></a> article:&#160;<a href="https://www.w3.org/TR/wai-aria-1.2/" class="external">https://www.w3.org/TR/wai-aria-1.2/</a>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>document</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies widget and application content where screen readers can switch from reading page context to reading mode. It notifies the screen reader to use document mode to read the content contained in the element.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>figure</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies any grouped content that must be consumed together. Figures include images, video, audio, code snippets, or other content.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>form</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies content that includes a collection of items and objects that are combined to create a form.</p>
+                            <p class="Important">Ensure you have unique labels for each form in a document. This label should be visible to all end-users, not just those using screen readers.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>group</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a set of <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term94">UI<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The UI (user interface) is a device's end-user interaction and communication point. It can include display screens, keyboards, and mouse. It is also how a user interacts with your application.</span></a> objects not included in a page summary or table of contents. Use this role to group logical collections of items with related functionality.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>heading</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Indicates that this element is a heading. Screen readers will read the text and notify the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-user<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> that it is formatted as a heading. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>img</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies any set of content that must be consumed as a single image. This content can include images, video, audio, code snippets, emojis, or other content.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>list</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies any content that is part of an outer container with a list of elements inside.</p>
+                            <p class="Tip">The&#160;<span class="Inline-Code">list</span> role is typically used in conjunction with the <span class="Inline-Code">listitem</span> role, which identifies a list item contained inside the list.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>listitem</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies any content inside a list of items.</p>
+                            <p class="Tip"> The <span class="Inline-Code">listitem</span> role is typically used in conjunction with the <span class="Inline-Code">list</span> role, which identifies any content that is part of an outer container with a list of elements inside.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>log</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies realtime data where new information is added and old information disappears. For example, chat logs, messaging history, or an error log. A log is ordered sequentially with new information added to the end of the log. When used, the browser notifies the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-user<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> of the log event.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>main</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Indicates the primary document content. Primary content is directly related to or expands on the main topic of a document or application.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>marquee</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies realtime information that changes on the page. The difference being that <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> do not necessarily require this information in their experience. Examples include advertisement banners and other nonessential content.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>menu</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a group of actions or functions that the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-user<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> can take action on. The menu role is best used for a list of menu items presented like a menu. You can also use this role for <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term4">modal<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A&#160;modal is a window that appears on top of the content you are currently viewing.</span></a> menus.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>menubar</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies menus that are always visible, and display in a horizontal bar. This menu type behaves like drop-down menus commonly found at the top of an application page.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>meter</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a graphical display of numeric values for a defined range. For example, displaying the percent completion of a task.</p>
+                            <p class="Note">Do no use the <span class="Inline-Code">meter</span> role for values that do not have a maximum limit or as a way to track a progress bar.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>navigation</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies major groups of links used when navigating page or website content.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>none</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies elements that do not contain <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term244">ARIA<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>ARIA (Accessible Rich Internet Applications) is a set of attributes used in HTML to enhance the accessibility of web content, particularly dynamic or interactive web pages, for users who rely on assistive technologies like screen readers.</span></a> semantics for screen readers. While ARIA is primarily used to promote accessibility, there are situations where hiding an element's semantics is helpful. Doing so defines that an element is used only for presentation purposes.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>note</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies that a section of content is included in parentheses or provides necessary support to the main content.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>presentation</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies elements that do not contain <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term244">ARIA<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>ARIA (Accessible Rich Internet Applications) is a set of attributes used in HTML to enhance the accessibility of web content, particularly dynamic or interactive web pages, for users who rely on assistive technologies like screen readers.</span></a> semantics for screen readers. While ARIA is primarily used to promote accessibility, there are situations where hiding an element's semantics is helpful. Doing so defines that an element is used only for presentation purposes.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>region</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies areas of the page that <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term22">Creators<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Also known as Unqork Users, or Designer Users; is anyone who is inside the Unqork platform.</span></a> consider significant. This role is a generic one available to aid in navigation.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>row</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a row in grid or table. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>rowgroup</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies a group of rows in a grid or table.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>rowheader</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies a cell containing header information in a grid or table.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>search</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies the search functionality of a page or application.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>separator</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies the element as a divider that separates sections of content or groups of menus. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>status</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Notifies <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> with a message. Use this role instead of <span class="Inline-Code">alert</span> when the notification represents information that is not urgent.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>switch</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies elements that can be set to <span class="Inline-Code">ON</span> or <span class="Inline-Code">OFF</span>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>tab</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Indicates an interactive element inside a list that, when triggered, displays its associated tab panel. This role is associated with the <span class="Inline-Code">tablist</span> and <span class="Inline-Code">tabpanel</span> roles.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>tablist</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies the element that serves as the container for a set of tabs, referred to as tab panels.
+
+This role is  associated with the <span class="Inline-Code">tab</span> and <span class="Inline-Code">tabpanel</span> roles.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>tabpanel</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Represents a container for the resources of layered content associated with a tab.
+
+This role is associated with the <span class="Inline-Code">tab</span> and <span class="Inline-Code">tablist</span>&#160;roles.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>toolbar</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies the element as a collection of commonly used buttons or controls represented visually. This role can be used to communicate the purpose of the grouping of these elements and tabbing for keyboard <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a>. </p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-AltBody">
+                            <p>tree</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-AltBody">
+                            <p>Identifies a hierarchical list with parent and children that can expand and collapse. Typically represented as a widget, it lets <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-users<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> select one or more items from the list.
+
+ This role is associated with the <span class="Inline-Code">treegrid</span> and <span class="Inline-Code">treeitem</span> roles.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-Body1">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyE-Term-Body1">
+                            <p>treegrid</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyD-Description-Body1">
+                            <p>Identifies an element as grid or table rows that can be expanded and collapsed in the same manner as a tree.
+
+This role is associated with the <span class="Inline-Code">tree</span> and <span class="Inline-Code">treeitem</span> roles.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-2022-AltRows_Sort-Body-AltBody">
+                        <td class="TableStyle-2022-AltRows_Sort-BodyB-Term-AltBody">
+                            <p>treeitem</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows_Sort-BodyA-Description-AltBody">
+                            <p>Identifies an element in a tree.
+This role is associated with the <span class="Inline-Code">tree</span> and <span class="Inline-Code">treegrid</span> roles.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <h2 data-mc-conditions="Default.Article/In-Product Help"><a name="Resources"></a>Resources</h2>
+            <ul>
+                <li>
+                    <p><a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00113-Accessible_Apps.htm" target="_blank">Building Accessible Applications in Unqork</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <p>&#160;</p>
+    </body>
+</html>

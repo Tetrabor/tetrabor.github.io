@@ -14,7 +14,7 @@ Ready to say hello? Reach out to me using one of the methods below.
 }}>
   <div>
     <h2>Email</h2>
-    <p>sheleman.m@gmail.com</p>
+    <a href="mailto:sheleman.m@gmail.com?subject=Regarding Your Portfolio and Resume">sheleman.m@gmail.com</a>>
   </div>
   <div>
     <h2>LinkedIn</h2>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta name="msapplication-config" content="../../../../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../../../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../../../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../../../../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../../../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../../../../../Skins/Favicons/favicon-16x16.png" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../../../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>how to use internal api in dropdown components</title>
+        <meta name="phrase" value="how to use internal api in dropdown components" />
+        <meta name="phrase" value="dropdown component call internal api" />
+        <meta name="phrase" value="internal api dropdown" />
+        <meta name="phrase" value="call data collection api" />
+        <meta name="phrase" value="get data collection" />
+        <meta name="phrase" value="setup internal api dropdown" />
+        <meta name="phrase" value="multi-select internal api dropdown" />
+        <meta name="phrase" value="put data collection in dropdown" />
+        <meta name="phrase" value="put data collection in multi-select dropdown" />
+        <meta name="phrase" value="internal api multi-select dropdown" />
+        <meta name="phrase" value="multi-select dropdown component call internal api" />
+        <meta name="phrase" value="multi-selection dropdown component api" />
+        <meta name="phrase" value="dropdown component internal api" />
+        <meta name="phrase" value="data collection api in dropdown" />
+        <meta name="phrase" value="data collection in dropdown" />
+        <meta name="phrase" value="data collection in multi-select dropdown" />
+        <meta name="feedback" value="true" />
+        <meta name="source-type" value="micro-content" />
+        <meta name="truncated" value="false" />
+        <meta name="scopes" value="AllFiles" />
+        <link href="../../../../../../Content/Resources/Stylesheets/2024Styles.css" rel="stylesheet" type="text/css" />
+        <meta name="theme-color" content="#1B4F64" />
+        <script src="../../../../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../../../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <p class="microContentTitle">How do I Use Internal APIs in Dropdown Components?</p>
+        <p>In the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span>, you can configure <a href="https://docs.unqork.io/Content/A02-ModEditor-Primary/A02005A-Dropdown_Component.htm" target="_blank">Dropdown</a> and <a href="https://docs.unqork.io/Content/A02-ModEditor-Primary/A02006-Multi-Select_Dropdown_Component.htm" target="_blank">Multi-Select Dropdown</a> components to reference <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00107-Workspaces_Ref_Data.htm" target="_blank">Data Collection</a> values using an internal <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term21">API<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>APIs (application programming interfaces) are a set of protocols and definitions developers use to build and integrate application software. APIs act as the connective tissue between products and services.</span></a> (application programming interface) call. In <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term23">Express View<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Express View is how your end-user views your application. Express View also lets you preview your applications to test your configuration and view the styling. This is also the view your end-users will see when interacting with your application. After configuring a module, click Preview in the Module Builder to interact with the module in Express View.</span></a>, the Dropdown components display the Data Collection values to the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term24">end-user<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>End-users, also known as Express Users, are the individuals accessing an application through Express View. In most cases, end-users are the customers using the product.</span></a> in a list.</p>
+        <p class="Tip">To learn more about using internal APIs in Dropdown components, visit our How to: Use an Internal API in a Dropdown Component article.</p>
+    </body>
+</html>

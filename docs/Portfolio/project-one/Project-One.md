@@ -1,24 +1,49 @@
 ---
-    title: Conceptual Article Example
-    sidebar_label: Conceptual Article
-    sidebar_position: 1
-    hide_table_of_contents: true
+title: How To Bring Your Own Task List
+sidebar_label: How To Bring Your Own Task List
+sidebar_position: 1
+description: A STAR-format case study for a conceptual Unqork documentation project.
+tags: [technical writing, portfolio, Unqork, MadCap Flare, SaaS]
+/* ahide_table_of_contents: true */
 ---
-# Conceptual Article Example  
-<div className="image center width90">
-    <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00513b-BYO-How-To-BYO-Task-List.htm"  target="_blank">![How To: Bring Your Own Task List](/img/byoTaskList.jpg "How To: Bring Your Own Task List")</a>
-</div>  
-| Function | Details |
-| --- | --- |
-| Title | How To: Bring Your Own Task List  |
-| Article Link | https://docs.unqork.io/Content/A00-Unqork_Platform/A00513b-BYO-How-To-BYO-Task-List.htm  |
-| Article Type | Conceptual |
-| Target Audience | Experienced JavaScript Developers  |
-| Platform | <a href="https://unqork.com/"  target="_blank">Unqork software platform</a>, a SaaS (Software as a Service) product designed to create no-code web applications for financial technology companies.  |
-| About | This article details a new feature that enables javascript developers to create their own components for use in the Module Builder tool. |
-| Key Responsibilities | - **Research**: Evaluated and compiled internal and external documentation. <br /> - **Development**: Created layout, deisgn, styling, and language. <br /> - **Collaboration**: Worked cross-functionally with product manager and two engineers, to create accurate documentation for end-users. <br /> - **Implementation**: Uploaded, cross-linked, and promoted article on Unqork Doc Hub. <br /> |
-| Outcomes | - Provided documenation for new feature to over a thousand Unqork end-users. <br /> - Reduced workload for customer support and support engineers. <br />
-| Authoring Tool | <a href="https://www.madcapsoftware.com/products/flare/"  target="_blank">Madcap Flare</a> |  
+
+# How To: Bring Your Own Task List
+
+**Article Type:** Conceptual  
+**Target Audience:** Experienced JavaScript Developers  
+**Platform:** [Unqork](https://unqork.com/) — a SaaS no-code application platform for financial technology companies.  
+**Authoring Tool:** [MadCap Flare](https://www.madcapsoftware.com/products/flare/)  
+**Published Article:** [View on Unqork Docs →](https://docs.unqork.io/docs/how-to-bring-your-own-task-list)
+
+---
+
+## Situation
+Unqork introduced a new feature that allowed experienced JavaScript developers to create their own components for use in the **Module Builder** tool. The feature expanded customization options for enterprise clients but required clear conceptual documentation to help developers understand how to integrate it effectively.
+
+---
+
+## Task
+As the technical writer, I was responsible for researching, designing, and publishing a conceptual “How To” article introducing the new **Bring Your Own Task List** feature. The goal was to provide developers with accurate, end-to-end guidance while reducing reliance on internal support teams.
+
+---
+
+## Action
+- **Research:** Evaluated and compiled internal and external documentation.  
+- **Development:** Created layout, design, styling, and instructional language in MadCap Flare.  
+- **Collaboration:** Partnered with a product manager and two engineers to ensure technical accuracy.  
+- **Implementation:** Uploaded, cross-linked, and promoted the article on the Unqork Doc Hub.  
+
+---
+
+## Result
+- Delivered documentation supporting a new Unqork platform feature to over **1,000 end-users**.  
+- Improved developer onboarding and self-service capabilities.  
+- Reduced workload for customer support and support engineers.  
+
+---
+
+### 💡 Key Takeaways
+This project highlights cross-functional collaboration, user-focused documentation design, and successful delivery of conceptual content in a SaaS environment.
 
 ## Original Article
 View the original article in the iFrame below. This version has been preserved from future edits.

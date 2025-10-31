@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="" data-mc-searchable="True" data-mc-conditions="Default.RELEASE READY">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>How to: Retrieve a Payload Using an Unqork  Connector</title>
+        <link href="../../Resources/TableStylesheets/2022-AltRows.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link rel="canonical" href="https://docs.unqork.io/Content/M-APIs_Integrations/M06-Integration_Gateway/M06007_Unqork_Connector_Full_Payload.htm" />
+        <link href="../../Resources/Stylesheets/2024Styles.css" rel="stylesheet" type="text/css" />
+        <meta name="Authors" content="Cliff Coss (Editor),Michael Sheleman (Writer)" />
+        <meta name="description" content="This how-to guide provides you an example on how to retrieve the entire payload of the Unqork Get Module Submissions endpoint using the Integration Gateway." />
+        <meta name="theme-color" content="#1B4F64" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+    </head>
+    <body>
+        <h1 class="hyperlink" onclick="setClipboard('https://docs.unqork.io/Content/M-APIs_Integrations/M06-Integration_Gateway/M06007_Unqork_Connector_Full_Payload.htm')" title="Copy link to header">How to: Retrieve a Payload Using an Unqork  Connector</h1>
+        <h2>
+            <MadCap:conditionalText data-mc-conditions="Default.Article/In-Product Help">Overview</MadCap:conditionalText>
+        </h2>
+        <p>The <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> accelerates digital transformations by easily integrating with over 700 systems across enterprise applications and databases, including the Unqork <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term21">API<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>APIs (application programming interfaces) are a set of protocols and definitions developers use to build and integrate application software. APIs act as the connective tissue between products and services.</span></a>. This how-to guide provides you an example on how to retrieve the entire payload of the Unqork <span class="BoldText">Get Module Submissions</span> endpoint using the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>. After configuring the endpoint, you'll setup a <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm" target="_blank">Plug-In</a> component to call it.</p>
+        <p class="Tip">To learn more about the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>, view our <a href="https://docs.unqork.io/Content/D-Administration/D10002-Integration_Administration.htm" target="_blank"><span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span></a> article.</p>
+        <h2 onclick="setClipboard('https://docs.unqork.io/Content/D-Administration/D10002A-Int_Gateways_Connection_Recipe.htm#creating')" title="Copy link to header" class="hyperlink"><a name="creating"></a>Creating an Integration Using <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span></h2>
+        <p>A few steps are involved when creating connections and recipes and running them:</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1."><span class="BoldText">Create a connection</span>: First, you must connect to your Unqork environment  to make  API calls using the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>. This process requires an account and authorization credentials for access to the Unqork API.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2."><span class="BoldText">Create a recipe</span>: Recipes are workflow-like steps that perform actions. Recipes have many advanced features that can handle all application integrations and workflow automation scenarios, including conditional triggers, actions, and so on. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3."><span class="BoldText">Define an endpoint for a recipe</span>: To make an API call to the Unqork service in your  <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00115-Application_Introduction.htm" target="_blank">applications</a>, you must establish an endpoint. You'll use this endpoint to make the call in a <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm" target="_blank">Plug-In</a> component.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4."><span class="BoldText">Configure a Plug-In component</span>: Set up a <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm" target="_blank">Plug-In</a> component to call your recipe's endpoint and perform the recipe's actions.</td>
+            </tr>
+        </table>
+        <h2>What You Need</h2>
+        <ul>
+            <li>
+                <p>1 <a href="https://docs.unqork.io/Content/D-Administration/D10001-API_Access_Management.htm" target="_blank">Set of Unqork API Access Credentials</a></p>
+            </li>
+            <li>
+                <p>1 <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> recipe</p>
+            </li>
+            <li>
+                <p>1 <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> connection</p>
+            </li>
+            <li>
+                <p>1 <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> endpoint</p>
+            </li>
+            <li>
+                <p>1 <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00100-Workspaces_Introduction.htm" target="_blank">Workspace</a></p>
+            </li>
+            <li>
+                <p>1 <a href="https://docs.unqork.io/Content/A00-Unqork_Platform/A00106-Workspaces_Modules.htm" target="_blank"><span class="mc-variable General.ModuleUppercase variable">Module</span>-type application</a></p>
+            </li>
+            <li>
+                <p>1 <a href="https://docs.unqork.io/Content/A01-ModEditor-General/A01007-Module_Introduction.htm" target="_blank"><span class="mc-variable General.ModuleUppercase variable">Module</span></a></p>
+            </li>
+        </ul>
+        <h2>Create a Connection</h2>
+        <p>The first step when creating your Unqork recipe is generating Unqork Access Credentials using the <a href="https://docs.unqork.io/Content/D-Administration/D10001-API_Access_Management.htm" target="_blank">API Access Management</a> page. Then, you'll use the credentials to set up the Unqork connection in the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>.</p>
+        <p class="Important">You must have an Unqork Administrator account to create access credentials.</p>
+        <h3><a name="Generate"></a>Generate Unqork Access Credentials</h3>
+        <p>This example connects the Unqork API to the <span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span> recipe. To grant the recipe access to the Unqork API for your environment, create a Creator Access Credential in <a href="https://docs.unqork.io/Content/D-Administration/D10001-API_Access_Management.htm" target="_parent">API&#160;Access Management</a>. You'll insert these credentials into the recipe in the next section.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">At the top right of the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>, click <span class="Unq-BlackBlueheader-Btn">Settings ▾</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Select <span class="Unq-table-dropdown">Administration</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Under Integration, click <span class="BoldText">API&#160;Access Management</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">On the <span class="BoldText">API&#160;Access Management</span> page, click <span class="Unq-Teal-Btn">+ Create New ▾</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Select <span class="BoldText">Creator Access Credential</span>. The Create New Creator Access Credential <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term4">modal<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A&#160;modal is a window that appears on top of the content you are currently viewing.</span></a> displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">In the <span class="Unq-NeutralGreyText-ComponentConfigField">Name*</span> field, enter a unique name for the credential.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">(Optional) In the <span class="Unq-NeutralGreyText-ComponentConfigField">Description</span> field, enter a short explanation for how the access credential is used.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">From the <span class="Unq-NeutralGreyText-ComponentConfigField">Select Creator Role(s)*</span> drop-down, select the level of access the Custom Connector will use. For this how-to guide, select <span class="BoldText">Administrator</span>. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Click <span class="Unq-Teal-Btn">Generate Credential</span>. The Client ID &amp; Secret modal displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>10.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="10.">Copy the <span class="Unq-NeutralGreyText-ComponentConfigField">Client ID</span> and <span class="Unq-NeutralGreyText-ComponentConfigField">Client Secret</span> field values to a secure location. You'll use the Client ID and Client Secret values in a later step.</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p class="Important">To maintain security, do not share credentials with other users.</p>
+        </div>
+        <h3><a name="Configur"></a>Configure Your Unqork Connection</h3>
+        <p>Access Unqork's <a href="https://docs.unqork.io/Content/D-Administration/D10002-Integration_Administration.htm" target="_blank"><span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span></a> page to configure the Unqork connection using the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>.</p>
+        <p>To access the <span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span> page:</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">At the top right of the <span class="mc-variable General.Unqork_Application variable">Unqork Designer Platform</span>, click <span class="Unq-BlackBlueheader-Btn">Settings ▾</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Select <span class="Unq-table-dropdown">Administration</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Under Integration, click <span class="BoldText"><span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span></span>.</td>
+            </tr>
+        </table>
+        <p>Now,  use the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> to create an Unqork connection.</p>
+        <p>
+            <div class="image-right">
+                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/M-APIs_Integrations/IntGateway_Get_SelectConnect.jpg" data-mc-popup-alt="A static image displaying the Create drop-down to select a new connection."><img class="MCPopupThumbnail img imgwide300px" data-mc-width="366" data-mc-height="400" src="../../Resources/Images/M-APIs_Integrations/IntGateway_Get_SelectConnect_thumb_0_0.jpg" alt="A static image displaying the Create drop-down to select a new connection." tabindex="" /></a>
+                </p>
+            </div>
+        </p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Open your <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> project.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click <span class="Unq-Teal-Btn">Create ▾</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Select <span class="Unq-LightTeal-Btn"><img src="../../Resources/Images/Inline/Connection_Icon.png" class="InLine14ptWideAuto"></img> Connection</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Search for and select the&#160;<img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_UnqorkPrivate.png" class="InLine16ptWideAuto" alt="Icon" />&#160;<span class="BoldText">Unqork Customer API</span> connection tile.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">In the <span class="BoldText">Connection Name<span style="color: #da3b1c;">*</span></span> field, enter a unique name for your connection.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">In the <span class="BoldText">Host</span><span style="color: #da3b1c;">*</span> field, enter your environment address. For example, <span class="Inline-Code">https://training.unqork.io/</span>.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_Connection.jpg" data-mc-popup-alt="A static image displaying the creation of the Unqork connection."><img class="MCPopupThumbnail img imgwide800px" data-mc-width="970" data-mc-height="790" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_Connection_thumb_0_0.jpg" alt="A static image displaying the creation of the Unqork connection." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">In the <span class="BoldText">Client ID</span><span style="color: #da3b1c;">*</span> field, enter the value recorded during the <a href="#Generate" target="_self">Generate Unqork Access Credentials</a> steps.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">In the <span class="BoldText">Client Secret</span><span style="color: #da3b1c;">*</span> field, enter the value recorded during the <a href="#Generate" target="_self">Generate Unqork Access Credentials</a> steps.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Click <span class="Unq-Teal-Btn">Connect</span>. The Connection Status changes to <span class="Unq-Status-Green"><img src="../../Resources/Images/Inline/intAdmin/connected.png" alt="Icon" class="InLine14ptWideAuto" />&#160;Connected</span>.</td>
+            </tr>
+        </table>
+        <p>Your connection is now established and active for use in your recipe. Next, you'll review how to create your recipe.</p>
+        <h2>Create a Recipe</h2>
+        <p>Recipes let you integrate your connections, set up triggers, and determine the actions and events you want to occur. For this how-to guide, you'll configure a recipe to retrieve the Unqork <span class="BoldText">Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span>' full payload.</p>
+        <p>To create a recipe and designate a starting point:</p>
+        <p>
+            <div class="image-right">
+                <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/M-APIs_Integrations/IntGateway_Get_SelectRecipe.jpg" data-mc-popup-alt="A static image displaying the Create drop-down to select a new recipe"><img class="MCPopupThumbnail img imgwide300px" data-mc-width="366" data-mc-height="400" src="../../Resources/Images/M-APIs_Integrations/IntGateway_Get_SelectRecipe_thumb_0_0.jpg" alt="A static image displaying the Create drop-down to select a new recipe" tabindex="" /></a>
+                </p>
+            </div>
+        </p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Open the Unqork project.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click <span class="Unq-Teal-Btn">Create ▾</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Select <span class="Unq-LightTeal-Btn"><img src="../../Resources/Images/Inline/intAdmin/recipe.png" class="InLine16ptWideAuto" alt="Icon" style="vertical-align: middle;" /> Recipe</span>.</td>
+            </tr>
+        </table>
+        <h4>Configure a Starting Point</h4>
+        <p>First, you must configure the starting point, or trigger, for your recipe. With the recipe page now open, configure the following fields:</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">In the <span class="BoldText">Name</span> field, enter a unique name for the recipe. For example, <span class="Inline-Code">{{teamName}} - Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">From the <span class="BoldText">Location</span><span class="Unq-table-dropdown-delete2">*</span> drop-down, specify the project.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">From the <span class="BoldText">Pick a starting point</span><span class="Unq-table-dropdown-delete2">*</span> list, select <img src="../../Resources/Images/D-Administration/integrationAdmin/connections/triggerFromApp.png" alt="icon" class="InLine2EmWideAuto" />&#160;<span class="BoldText">Trigger from an App</span>. </td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_CreateRecipe.jpg" data-mc-popup-alt="A static image displaying the creation of the Get Workspaces Application recipe."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1233" data-mc-height="614" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_CreateRecipe_thumb_0_0.jpg" alt="A static image displaying the creation of the Get Workspaces Application recipe." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Click <span class="Unq-Teal-Btn">Start Building</span>. The recipe page loads.</td>
+            </tr>
+        </table>
+        <h3>Configure the Trigger</h3>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">On the Recipe Canvas, under <span class="BoldText">TRIGGER</span>, click the  <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/triggerEvent.png" alt="icon" class="InLine16ptWideAuto" /> <span class="BoldText">Select an App and Trigger Event</span></span> button. A configuration panel displays all your connected apps at the right of the page.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Under <img src="../../Resources/Images/D-Administration/integrationAdmin/connections/triggerEvent.png" alt="icon" class="InLine16ptWideAuto" /> <span class="BoldText">Choose an App</span>, in the search field, enter <span class="Inline-Code">API</span> to filter the list.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Select <img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="BoldText">API Platform by Workato</span>. The <span class="BoldText">TRIGGER</span> step changes to <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" /> <span class="BoldText">New</span>&#160;<span class="Unq-Purple_PropertyIdText">API request</span>&#160;<span class="Int-GreenButton">Real-time</span></span>.</td>
+            </tr>
+        </table>
+        <h3>Configure the First Action</h3>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Under <span class="BoldText">ACTIONS</span>, click the <img src="../../Resources/Images/Inline/Action_Plus_Icon.png" class="InLine16ptWideAuto" />&#160;<span class="BoldText">(Add Step)</span> button. A list of actions displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click <span class="Int-emptyStepButton"><img src="../../Resources/Images/Inline/intAdmin/actionInApp.png" alt="Icon" class="InLine16ptWideAuto" />&#160;Action in App</span>. The configuration panel displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Under <img src="../../Resources/Images/Inline/intAdmin/acctionInApp_Grey.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="BoldText">Choose an App</span>, search for and select the <img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_UnqorkPrivate.png" class="InLine16ptWideAuto" alt="Icon" /> <span class="BoldText">Unqork Customer API</span> tile. The configuration panel navigates to the <span class="Unq-TealText-ComponentTray">Action</span> step.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Under <img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_UnqorkPrivate.png" class="InLine16ptWideAuto" alt="Icon" />&#160;<span class="BoldText">Choose an Action</span>, search for and select <span class="BoldText">Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span>. The configuration panel navigates to the <span class="Unq-TealText-ComponentTray">Connection</span> step.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_GetModuleSubmissionsAction.jpg" data-mc-popup-alt="A static image displaying the second step's Action page, the Get Module Submissions Endpoint is selected."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1286" data-mc-height="524" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_GetModuleSubmissionsAction_thumb_0_0.jpg" alt="A static image displaying the second step's Action page, the Get Module Submissions Endpoint is selected." tabindex="" /></a>
+            </p>
+        </div>
+        <h4>Connect to the Unqork Customer API</h4>
+        <p>Select the connection set up in the <a href="#Configur" target="_self">Configure Your Unqork Connection</a> section. Doing so adds the Access Credentials to your API Request.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">In the <span class="Unq-TealText-ComponentTray">Connection</span> step, search for and select the Unqork Connection created in the <a href="#Configur" target="_self">Configure Your Unqork Connection</a> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click <span class="Unq-Teal-Btn">Connect</span>. The configuration panel navigates to the <span class="Unq-TealText-ComponentTray">Setup</span> step.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_connect.jpg" data-mc-popup-alt="A static image displaying the second step's Connection settings, the Unqork API Access Credentials are selected."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1284" data-mc-height="525" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_connect_thumb_0_0.jpg" alt="A static image displaying the second step's Connection settings, the Unqork API Access Credentials are selected." tabindex="" /></a>
+            </p>
+        </div>
+        <h4>Pass the moduleId Field to the Endpoint</h4>
+        <p>Because you're retrieving a <span class="mc-variable General.module variable">module</span>'s submissions using its <span class="mc-variable General.module variable">module</span> ID, you must map it from the <span class="BoldText">TRIGGER</span> step to the  <span class="BoldText">ACTIONS</span>&#160;<span class="Unq-TealText-ComponentTray">Setup</span> step. Mapping this field lets you to pass the <span class="mc-variable General.module variable">module</span> ID value to the endpoint from inside a <span class="mc-variable General.module variable">module</span>.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Select the <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" /> <span class="BoldText">New</span>&#160;<span class="Unq-Purple_PropertyIdText">API request</span>&#160;<span class="Int-GreenButton">Real-time</span></span>&#160;<span class="BoldText">TRIGGER</span> step. The configuration panel displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">On the <span class="Unq-TealText-ComponentTray">Setup</span> pane, navigate to the <span class="BoldText">Request Schema</span> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Click <span class="BoldText">Add fields manually</span>. The <span class="Unq-LightTeal-Btn">Add New Field</span> modal displays.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_requestSchema.jpg" data-mc-popup-alt="A static image displaying the first step's Setup settings. The Request Schema section displays and the add fields manually link is highlighted."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1257" data-mc-height="580" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_requestSchema_thumb_0_0.jpg" alt="A static image displaying the first step's Setup settings. The Request Schema section displays and the add fields manually link is highlighted." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">In the <span class="Unq-NeutralGreyText-ComponentConfigField">Name</span><span class="Unq-table-dropdown-delete2">*</span> and <span class="Unq-NeutralGreyText-ComponentConfigField">Label</span><span class="Unq-table-dropdown-delete2">*</span> fields, enter <span class="Unq-Component-Action">moduleId</span>.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_addFields.jpg" data-mc-popup-alt="A static image displaying the first step's Setup settings. The Add New Field modal displays, the name and label fields are filled."><img class="MCPopupThumbnail img imgwide600px" data-mc-width="475" data-mc-height="437" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_addFields_thumb_0_0.jpg" alt="A static image displaying the first step's Setup settings. The Add New Field modal displays, the name and label fields are filled." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">Click <span class="Unq-Teal-Btn">Add Field</span>. The field displays under the <span class="BoldText">Request Schema</span> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Select the  <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_UnqorkPrivate.png" class="InLine16ptWideAuto" alt="Icon" />&#160;<span class="BoldText">Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span> in <span class="Unq-Purple_PropertyIdText">Unqork Customer API</span></span> step and return to the <span class="Unq-TealText-ComponentTray">Setup</span> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">Click the <span class="BoldText"><span class="mc-variable General.module variable">module</span>Id</span><span class="Unq-table-dropdown-delete2">*</span>&#160;field, the <span class="Unq-LightTeal-Btn">Recipe Data</span> modal expands.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">In the <span class="Unq-LightTeal-Btn">Recipe Data</span> modal, navigate to the <span class="BoldText">Request Parameters</span> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Drag and drop the <span class="Unq-Component-Action"><span class="mc-variable General.module variable">module</span>Id</span>&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term161">datapill<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Datapills are output data from a trigger or an action step. They are variables that you can use to map business logic into recipe steps.</span></a> into the <span class="BoldText"><span class="mc-variable General.module variable">module</span>Id</span><span class="Unq-table-dropdown-delete2">*</span> field. </td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p>
+                <video controls="" muted="" loop="" autoplay="" title="" class="_video900_0">
+                    <source src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_addPill.webm" type="video/webm">Your browser does not support the video tag.</source>
+                </video>
+            </p>
+        </div>
+        <h3>Create the API&#160;Response</h3>
+        <p>The third step in the recipe sets the response to Text/XML, and specifies what HTTP status code to display when retrieving data from the endpoint successfully.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Under <span class="BoldText">ACTIONS</span>, click the <img src="../../Resources/Images/Inline/Action_Plus_Icon.png" class="InLine16ptWideAuto"></img>&#160;<span class="BoldText">(Add Step)</span> button. A list of actions displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">Click <span class="Int-emptyStepButton"><img src="../../Resources/Images/Inline/intAdmin/actionInApp.png" alt="Icon" class="InLine16ptWideAuto"></img>&#160;Action in App</span>. The configuration panel displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Under <img src="../../Resources/Images/Inline/intAdmin/acctionInApp_Grey.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="BoldText">Choose an App</span>, search for and select the&#160;<img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine2EmWideAuto" />&#160;<span class="BoldText">API Platform by Workato</span> tile. This step changes the action to <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="Unq-White-Btn" style="background-color: transparent !important;">RETURN</span>&#160;<span class="BoldText">API Response</span></span> and the configuration panel navigates to the <span class="Unq-TealText-ComponentTray">Setup</span> step.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Return to and select the <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="BoldText">New</span>&#160;<span class="Unq-Purple_PropertyIdText">API request</span>&#160;<span class="Int-GreenButton">Real-time</span></span>&#160;<span class="BoldText">TRIGGER</span>&#160;step.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">From the right-menu, scroll to the <span class="BoldText">Response</span><span class="Unq-table-dropdown-delete2">*</span> section.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">From the <span class="BoldText">Content Type</span><span class="Unq-table-dropdown-delete2">*</span> drop-down, select <span class="BoldText">Text/XML</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">Scroll to the <span class="BoldText">Responses</span><span class="Unq-table-dropdown-delete2">*</span> section and click <span class="Unq-White-Btn">Add Response</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">In <span class="BoldText">Name</span> field of the <span class="BoldText">Response #1</span> box, enter <span class="Unq-Component-Action">response</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">From the <span class="BoldText">HTTP status code</span><span class="Unq-table-dropdown-delete2">*</span> drop-down, select <span class="BoldText">200 - OK</span>. Whenever the API successfully returns the response values, this status code displays.</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p class="Tip">To learn more about response codes, view our <a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01009-HTTP_Status_Codes.htm" target="_blank">HTTP&#160;Status Codes</a> article.</p>
+        </div>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_response.jpg" data-mc-popup-alt="A static image displaying the first step's API Response settings. The Name and HTTP Status Code fields are filled out."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1188" data-mc-height="628" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_response_thumb_0_0.jpg" alt="A static image displaying the first step's API Response settings. The Name and HTTP Status Code fields are filled out." tabindex="" /></a>
+            </p>
+        </div>
+        <h4><a name="Pass"></a>Pass and Convert the Text/HTML Body to the API&#160;Response Step</h4>
+        <p>Now that your Recipe has a Response schema add the response fields to the API Response's Setup step.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Select the <span class="Int-emptyStepButton"><img src="../../Resources/Images/D-Administration/integrationAdmin/connections/intAdmin_API.png" alt="icon" class="InLine16ptWideAuto" />&#160;<span class="Unq-White-Btn" style="background-color: transparent !important;">RETURN</span>&#160;<span class="BoldText">API Response</span></span> step. The configuration menu displays the <span class="Unq-TealText-ComponentTray">Setup</span> settings.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">From the <span class="BoldText">Response</span><span class="Unq-table-dropdown-delete2">*</span> drop-down, select <span class="Unq-table-dropdown">response</span>. The <span class="BoldText">Response body</span><span class="Unq-table-dropdown-delete2">*</span> box displays below.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Hover over the <span class="BoldText">Body</span> field, the <span class="Unq-GreyGreyText-Btn"><span class="BoldText">Text</span> Formula</span> button displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Click the <span class="Unq-GreyGreyText-Btn">Formula</span> button. The Body field changes background colors and the <span class="Unq-LightTeal-Btn">Recipe Data</span> modal expands.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">From the <span class="Unq-LightTeal-Btn">Recipe Data</span> modal, select the <span class="Unq-GreyGreyText-Btn">Payload</span>&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term161">datapill<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Datapills are output data from a trigger or an action step. They are variables that you can use to map business logic into recipe steps.</span></a> and drag it onto the <span class="BoldText">Response Body</span>'s <span class="BoldText">Body</span><span class="Unq-table-dropdown-delete2">*</span> field. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Select the <span class="BoldText">Body</span> field to the right of the <span class="Unq-GreyGreyText-Btn">Payload</span>&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term161">datapill<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Datapills are output data from a trigger or an action step. They are variables that you can use to map business logic into recipe steps.</span></a>, enter <span class="Unq-DarkPurple-PropertyIdText">.to_json</span>. This formula converts the payload data to JSON.</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p>
+                <video controls="" muted="" loop="" autoplay="" title="" class="_video900_0">
+                    <source src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_convert.webm" type="video/webm">Your browser does not support the video tag.</source>
+                </video>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">At the top of the panel, click <span class="Unq-Choice-Chip">Save</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">At the top right of the panel, click <span class="Unq-Choice-Chip">x Exit</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">Click <span class="Unq-Teal-Btn">Start Recipe</span>. </td>
+            </tr>
+        </table>
+        <p>The recipe is now running and ready for use in Unqork. The final step in the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> is to create an endpoint for the recipe.</p>
+        <h3>Configure Your Endpoint</h3>
+        <p>To use your recipe in a <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm" target="_blank">Plug-In</a> component, you must create an endpoint in the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span>. Once created, it displays in the Plug-In component's <span class="BoldText">External Services</span> drop-down.</p>
+        <p>To configure your endpoint:</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">At the top left of the Recipe Builder, click the <span class="BoldText">API Platform</span> tab.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">From the <span class="Unq-TealText-ComponentTray">API Collections</span> panel, select an existing API Recipe collection.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Click <span class="Unq-Choice-Chip">+ New Endpoint</span>. The <span class="Unq-LightTeal-Btn">Add New Endpoint</span> modal displays.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">From the <span class="BoldText">Recipe<span style="color: #da3b1c;">*</span></span> drop-down, search for and select your recipe's name.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">From the <span class="BoldText">HTTP Method<span style="color: #da3b1c;">*</span></span> drop-down, select the method to use for this endpoint. In this case,  leave it as the default <span class="BoldText">GET</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">In the <span class="BoldText">Endpoint Name<span style="color: #da3b1c;">*</span></span> field, enter a unique name for this endpoint. For example, <span class="Unq-Component-Action">Get Workspace Application</span>. This value displays in the Plug-In component's External Services setting.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7.">In the <span class="BoldText">Endpoint Path<span style="color: #da3b1c;">*</span></span> field, enter a unique path for your endpoint. For example, <span class="Unq-Component-Action">getWorkspaceApplication</span>.</td>
+            </tr>
+        </table>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_endPoint.jpg" data-mc-popup-alt="A static image displaying the Add New Endpoint modal with it's completed fields to get a workspace application  in Unqork."><img class="MCPopupThumbnail img imgwide500px" data-mc-width="504" data-mc-height="549" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_endPoint_thumb_0_0.jpg" alt="A static image displaying the Add New Endpoint modal with it's completed fields to get a workspace application  in Unqork." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>8.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="8.">Click <span class="Unq-Teal-Btn">Add Endpoint</span>. You return to the API Platform page and the new endpoint tile displays at the top of the page.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>9.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="9.">On the endpoint tile, click the <span class="BoldText">··· (options)</span> button. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>10.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="10.">Select <span class="Unq-LightTeal-Btn">Activate Endpoint</span>. The endpoint's status changes from <span class="Int-GreyButton">Never Active</span> to <span class="Int-GreenButton">Active</span>.</td>
+            </tr>
+        </table>
+        <p>You endpoint is now active, so you can select it in a Plug-In component.</p>
+        <h2>Configuration</h2>
+        <p>The last step of the process is to configure a <span class="mc-variable General.module variable">module</span> to retrieve Unqork application data using the endpoint. These instructions assume you have a <span class="mc-variable General.module variable">module</span> saved with a title.</p>
+        <h3>Configure the Text Field Component</h3>
+        <p>Configure a <a href="https://docs.unqork.io/Content/A02-ModEditor-Primary/A02001-Text_Field_Component.htm" target="_blank">Text Field</a> component for entering the <span class="mc-variable General.ModuleUppercase variable">Module</span>ID. This value inputs into the Plug-In component you'll configure in the next section.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">In the <span class="mc-variable General.ModuleBuilder variable">Module Builder</span>, drag and drop a <span class="Unq-TealText-ComponentTray">&#160;<span class="ico-textField">T</span>ext Field</span> component onto the canvas.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <a href="#" class="MCTextPopup PropID MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPropID MCTextPopupHotSpot_ MCTextPopupHotSpot_PropID" glossTerm="Glossary.Term2">Property ID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A Property ID is the unique field ID used by Unqork to track and link components in your module.</span></a> field, enter <span class="Unq-DarkPurple-PropertyIdText">text<span class="mc-variable General.ModuleUppercase variable">Module</span>Id</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">In the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term0"><span class="Unq-NeutralGreyText-ComponentConfigField">Canvas Label Text</span><span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Label Text conveys what the input component is and what information it displays. Enter the purpose of the corresponding component or field.</span></a> field, enter <span class="Unq-Component-Action">Module ID:</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Click <span class="Unq-Teal-Btn">Save &amp; Close</span>.</td>
+            </tr>
+        </table>
+        <h3>Configure the Plug-In Component</h3>
+        <p>Add a <a href="https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm" target="_blank">Plug-In</a> component to use your new <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span> endpoint and retrieve your workspace application.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Drag and drop a <span class="ico-Plugin_Component">Plug-In</span> component onto your canvas, placing it below the <span class="Unq-DarkPurple-PropertyIdText">text<span class="mc-variable General.ModuleUppercase variable">Module</span>Id</span>&#160;<span class="Unq-TealText-ComponentTray">&#160;<span class="ico-textField">T</span>ext Field</span> component.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <a href="#" class="MCTextPopup PropID MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPropID MCTextPopupHotSpot_ MCTextPopupHotSpot_PropID" glossTerm="Glossary.Term2">Property ID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A Property ID is the unique field ID used by Unqork to track and link components in your module.</span></a> and <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term0"><span class="Unq-NeutralGreyText-ComponentConfigField">Canvas Label Text</span><span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Label Text conveys what the input component is and what information it displays. Enter the purpose of the corresponding component or field.</span></a> fields, enter <span class="Unq-Component-Action">plugGet<span class="mc-variable General.ModuleUppercase variable">Module</span>Submissions</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Under Data, set the <span class="BoldText">Service Type</span> to <span class="Unq-Choice-Chip-Old">External</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">From the <span class="Icon-Unq-NeutralGreyText">External Services</span> drop-down, select the endpoint you created.</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p class="Note">On selection, the Data Source URL and Request Type automatically populate.</p>
+        </div>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_plugIn.jpg" data-mc-popup-alt="A static image displaying the Plug-In component's configuration window with the selected Get Module Submissions by eye dees endpoint."><img class="MCPopupThumbnail img imgwide900px" data-mc-width="1137" data-mc-height="327" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_plugIn_thumb_0_0.jpg" alt="A static image displaying the Plug-In component's configuration window with the selected Get Module Submissions by eye dees endpoint." tabindex="" /></a>
+            </p>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">In the <span class="Unq-DarkPurple-PropertyIdText">INPUTS</span> table, enter the following:</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStylesheets/2022-AltRows.css');" class="TableStyle-2022-AltRows" cellspacing="0">
+                <col class="TableStyle-2022-AltRows-Column-Term" style="width: 149px;" />
+                <col class="TableStyle-2022-AltRows-Column-Description" />
+                <thead>
+                    <tr class="TableStyle-2022-AltRows-Head-Header1">
+                        <th class="TableStyle-2022-AltRows-HeadE-Term-Header1">Property&#160;ID</th>
+                        <th class="TableStyle-2022-AltRows-HeadD-Description-Header1">Mapping</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-2022-AltRows-Body-Body1">
+                        <td class="TableStyle-2022-AltRows-BodyB-Term-Body1">
+                            <p class="nowrap">text<span class="mc-variable General.ModuleUppercase variable">Module</span>Id</p>
+                        </td>
+                        <td class="TableStyle-2022-AltRows-BodyA-Description-Body1">
+                            <p class="nowrap"><span class="mc-variable General.module variable">module</span>Id</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Click <span class="Unq-Blue-Btn">Save</span>.</td>
+            </tr>
+        </table>
+        <h3>Configure the Button Component</h3>
+        <p>Next, add a <a href="https://docs.unqork.io/Content/A03-ModEditor-Secondary/A03002A-Button_Component.htm" target="_blank">Button</a> component to trigger the Plug-In component.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1.">Drag and drop a <span class="Unq-TealText-ComponentTray"><img src="../../Resources/Images/Inline/button_component_icon.png" alt="Button component Icon" class="InLine14ptWideAuto" style="mc-thumbnail-max-height: 1.4em;" /> Button</span> component onto the canvas, placing it below your <span class="ico-Plugin_Component">Plug-In</span> component.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <a href="#" class="MCTextPopup PropID MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPropID MCTextPopupHotSpot_ MCTextPopupHotSpot_PropID" glossTerm="Glossary.Term2">Property ID<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>A Property ID is the unique field ID used by Unqork to track and link components in your module.</span></a> field, enter <span class="Unq-DarkPurple-PropertyIdText">btnGet<span class="mc-variable General.ModuleUppercase variable">Module</span>Submissions</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">In the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term0"><span class="Unq-NeutralGreyText-ComponentConfigField">Canvas Label Text</span><span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Label Text conveys what the input component is and what information it displays. Enter the purpose of the corresponding component or field.</span></a> field, enter <span class="Unq-Component-Action">Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">Set the <span class="Icon-Unq-NeutralGreyText">Action Type</span> to <span class="Unq-Choice-Chip">Event</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>5.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="5.">In the <span class="Unq-NeutralGreyText-ComponentConfigField">Trigger</span> field, enter <span class="Unq-Component-Action">plugGet<span class="mc-variable General.ModuleUppercase variable">Module</span>Submissions</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>6.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="6.">Click <span class="Unq-Teal-Btn">Save &amp; Close</span>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>7.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="7."><span class="Unq-Teal-Btn">Save</span> your <span class="mc-variable General.module variable">module</span>.</td>
+            </tr>
+        </table>
+        <h3>View the API Response In Console</h3>
+        <p>Now that you've built your endpoint  and created a <span class="mc-variable General.module variable">module</span> that can call it, verify the endpoint works correctly.</p>
+        <table class="AutoNumber_p_NumLevel1First" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>1.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="1."><span class="Unq-Choice-Chip">Preview</span> your <span class="mc-variable General.module variable">module</span> in&#160;<a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term23">Express View<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>Express View is how your end-user views your application. Express View also lets you preview your applications to test your configuration and view the styling. This is also the view your end-users will see when interacting with your application. After configuring a module, click Preview in the Module Builder to interact with the module in Express View.</span></a>.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>2.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="2.">In the <span class="BoldText">Workspace ID</span> and <span class="BoldText">Application ID</span> fields, enter a workspace and application ID from your environment.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>3.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="3.">Click the <span class="BoldText">Get <span class="mc-variable General.ModuleUppercase variable">Module</span> Submissions</span> button.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_NumLevel1Plus" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 9.599998px;" />
+            <col style="width: 38.4px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_NumLevel1First" valign="top"><span>4.</span>
+                </td>
+                <td class="AutoNumber_p_NumLevel1First" valign="top" data-mc-autonum="4.">In the <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" glossTerm="Glossary.Term61">DevTools Console<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>The DevTools Console helps you securely store, build, test, and deploy your software.</span></a>, use the <a href="https://docs.unqork.io/Content/A01-ModEditor-General/A01203-DevTools_Console.htm#Access" target="_blank">Angular Command</a> to inspect the submission data.</td>
+            </tr>
+        </table>
+        <div class="indent">
+            <p>The&#160;Plug-In retrieves the payload specified in the <a href="#Pass" target="_self">Pass the JSON Fields to the API&#160;Response</a> step.</p>
+        </div>
+        <div class="image-indent">
+            <p><a class="MCPopupThumbnailLink MCPopupThumbnailPopup" href="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_data.jpg" data-mc-popup-alt="A static image displaying the submission data. The Plugin data displays the fields set by the Integration Administration endpoint."><img class="MCPopupThumbnail img imgwide800px" data-mc-width="871" data-mc-height="372" src="../../Resources/Images/D-Administration/integrationAdmin/unqorkConnector_Payload/connector_data_thumb_0_0.jpg" alt="A static image displaying the submission data. The Plugin data displays the fields set by the Integration Administration endpoint." tabindex="" /></a>
+            </p>
+        </div>
+        <h2 onclick="setClipboard('https://docs.unqork.io/Content/D-Administration/D10002A-Int_Gateways_Connection_Recipe.htm#resources')" title="Copy link to header" class="hyperlink" data-mc-conditions="Default.Article/In-Product Help">Resources</h2>
+        <ul data-mc-conditions="Default.Article/In-Product Help">
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01202-Connecting_Apps.htm" target="_blank">Learn more about APIs.</a>
+                </p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M01-APIs/M01002-How_APIs_Work.htm" target="_blank">Learn how APIs work</a>.</p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/D-Administration/D10002-Integration_Administration.htm" target="_blank"><span class="mc-variable General.IntegrationAdministration variable">Integration Administration</span></a>.</p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/D-Administration/D10002B-Int_Gateways_On_Prem.htm" target="_blank">How to: Create On-Prem Groups Using the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span></a>.</p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/D-Administration/D10002C-Int_Gateways_Promotion.htm" target="_blank">How to: Promote Recipes Using the <span class="mc-variable General.IntegrationGateway variable">Integration Gateway</span></a>.</p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M06-Integration_Gateway/M06003_Get_Salesforce.htm" target="_blank">How to: Get Salesforce Contact Records</a>.</p>
+            </li>
+            <li>
+                <p data-mc-conditions="Default.Article/In-Product Help"><a href="https://docs.unqork.io/Content/M-APIs_Integrations/M06-Integration_Gateway/M06004_Create_Salesforce.htm" target="_blank">How to: Create Salesforce Contact Records</a>.</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

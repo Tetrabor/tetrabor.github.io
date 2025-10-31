@@ -106,6 +106,10 @@ const config: Config = {
           title: 'Contact',
           items: [
             {
+              label: 'Email',
+              href: 'mailto:sheleman.m@gmail.com',
+            },
+            {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/sheleman/',
             },
@@ -116,7 +120,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Michael Sheleman, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Michael Sheleman, Inc. <br> Built with Docusaurus. Hosted on GitHub`,
     },
     prism: {
       theme: prismThemes.github,
