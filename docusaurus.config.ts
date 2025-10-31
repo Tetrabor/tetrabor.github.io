@@ -90,7 +90,7 @@ const config: Config = {
       title: "Michael Sheleman",
       logo: {
         alt: 'My Site Logo',
-        src: 'img/michaelShelemanBig.png',
+        src: 'img/msheleman_512.png',
       },
       items: [
         {to: '/docs/Resume', label: 'Resume', position: 'left'},
