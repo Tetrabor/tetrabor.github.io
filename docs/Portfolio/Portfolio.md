@@ -9,10 +9,10 @@ Use the links below to view my technical writing works. All projects within the 
   <div class="col col--6">
     <!-- Content for the first column -->
     ## Documentation Examples
-        - [Conceptual Article](/docs/Portfolio/project-one)
-        - [Reference Article](/docs/Portfolio/project-two)
-        - [Procedural Article](/docs/Portfolio/project-three)
-        - [Documentation Site](/docs/Portfolio/project-four)
+        - [Bring Your Own Task List - Conceptual Article](/docs/Portfolio/documentation/byoTaskList)
+        - [ARIA Reference Guide](/docs/Portfolio/documentation/referenceGuide)
+        - [Get Operator - Procedueral Article](/docs/Portfolio/documentation/proceduralGuide)
+        - [Unqork Document Hub - Documentation Site](/docs/Portfolio/documentation/websiteDesign)
   </div>
   <div class="col col--6">
     <!-- Content for the second column -->
