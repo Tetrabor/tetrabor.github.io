@@ -22,49 +22,45 @@ documentation processes and collaborate effectively with cross-functional teams.
 ---
 #### Senior Technical Writer
 ##### AidenAI | Remote | Dec 2024 - Present
-- Managed documentation across four developer teams, enhancing content
-consistency and quality.
-- Conducted editorial reviews for a team of three technical writers, fostering
-continuous improvement in writing standards.
-- Oversaw Agile documentation workflows to boost efficiency and deliver timely
-updates.
+- Authored documentation for 30+ new software platform features annually..
+- Managed documentation across four developer teams, enhancing content consistency and quality.
+- Led editorial reviews, onboarding, and training for a team of five technical writers.
+- Served as product owner for the technical writing Agile backlog, including sprint planning and retrospectives.
+
 #### Senior Technical Writer
 ##### Unqork | Remote | Feb 2024 - Dec 2025
-- Led the creation and maintenance of 36+ new feature articles each year,
-ensuring comprehensive API and user documentation.
-- Coordinated documentation efforts for four developer teams, streamlining
-processes and ensuring high standards of accuracy.
-- Optimized the bi-monthly release notes process using Agile methodologies.
-- Implemented WCAG-compliant content to improve accessibility across
+- Coordinated documentation efforts for four developer teams, streamlining processes and ensuring high standards of accuracy.
+- Implemented WCAG compliance to improve documentation accessibility.
+-compliant content to improve accessibility across
 documentation.
 #### Technical Writer
 ##### Unqork | Remote | Nov 2021 - Feb 2024
-- Authored and published external documentation for 26+ features annually,
-providing detailed guidance for diverse user groups.
+- Authored documentation for 26+ features annually, providing detailed guidance for diverse user groups.
 - Integrated analytics tools that boosted content views by 200% within one year.
 - Developed scalable documentation templates, reducing update times by 30%.
+
 #### Freelance Technical Writer
 ##### Self-Employed | Remote | Oct 2020 - Nov 2021
-- Developed and maintained a high-traffic game wiki with over 7,000 daily
-views, establishing a reliable resource for the community.
-- Compiled and translated weekly developer release notes, enhancing global
-content accessibility.
-- Crafted engaging blogs and marketing content that increased brand visibility
-and customer engagement for clients in gaming and tech.
+- Developed and maintained a high-traffic game wiki with over 7,000 daily views, establishing a reliable resource for the community.
+- Compiled and translated weekly developer release notes, enhancing global content accessibility.
+- Crafted engaging blogs and marketing content that increased brand visibility and customer engagement for clients in gaming and tech.
+
 
 ### Education {#education}
 
 ---
 - Certified Professional Technical Communicator (CPTC™) Foundation | 2021
 - Professional Scrum Master™ I (PSM I) | 2018
-- Bachelor’s Degree, San Francisco State University | 2014
+- Bachelor’s Degree in Criminal Justice, San Francisco State University| 2014
 
 ---
 
 ### Skills {#skills}
-- Documentation Lifecycle Management: End-to-end process from research to publication
-- Project Management Tools: JIRA, Confluence, Asana, Trello
-- Design & Editing Tools: Photoshop, Paintshop, Snagit, Madcap Flare, Zendesk, 
-- Markup Languages: DITA, XML, HTML, CSS, Markdown
-- Version Control: GIT, Proprietary systems
+- **Documentation Lifecycle Management**: End-to-end process from research to publication
+- **Project Management Tools**: JIRA, Confluence, Asana, Trello, Agile
+- **Design & Editing Tools**: Photoshop, PaintShop, Snagit, MadCap Flare, Zendesk, Docusaurus, Doc360, VSCode
+- **Languages**: DITA, XML, HTML, CSS, Markdown, Python (Basic), JavaScript (Basic)
+- **AI**: Machine Learning (Basic), Neural Networks (Basic), Implementation (Basic)
+- **Version Control**: Git, Proprietary software systems
 - Stakeholder Communication & Time Management
+

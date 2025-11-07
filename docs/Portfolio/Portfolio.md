@@ -17,9 +17,9 @@ Use the links below to view my technical writing works. All projects within the 
   <div class="col col--6">
     <!-- Content for the second column -->
     ## AI Projects
-        - [Conceptual Article](/docs/Portfolio/project-one)
-        - [Reference Article](/docs/Portfolio/project-two)
-        - [Procedural Article](/docs/Portfolio/project-three)
-        - [Documentation Site](/docs/Portfolio/project-four)
+        - [Tabs System](/docs/Portfolio/ai-projects/tabsSystem)
+        - [Highlight to Link](/docs/Portfolio/ai-projects/highlightLink)
+        - [Close Info Bar](/docs/Portfolio/ai-projects/stripHTML)
+        - [HTML Element Stripper](/docs/Portfolio/ai-projects/tabsSystem)
   </div>
 </div>
