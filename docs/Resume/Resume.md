@@ -4,7 +4,7 @@
     sidebar_position: 1
 ---
 
-<div class="text--center">
+<div className="text--center">
 # Michael Sheleman
 (408) 607-2116 - sheleman.m@gmail.com - https://www.linkedin.com/in/sheleman/
 </div>
@@ -22,7 +22,7 @@ documentation processes and collaborate effectively with cross-functional teams.
 ---
 #### Senior Technical Writer
 ##### AidenAI | Remote | Dec 2024 - Present
-- Authored documentation for 30+ new software platform features annually..
+- Authored documentation for 30+ new software platform features annually.
 - Managed documentation across four developer teams, enhancing content consistency and quality.
 - Led editorial reviews, onboarding, and training for a team of five technical writers.
 - Served as product owner for the technical writing Agile backlog, including sprint planning and retrospectives.
@@ -30,9 +30,7 @@ documentation processes and collaborate effectively with cross-functional teams.
 #### Senior Technical Writer
 ##### Unqork | Remote | Feb 2024 - Dec 2025
 - Coordinated documentation efforts for four developer teams, streamlining processes and ensuring high standards of accuracy.
-- Implemented WCAG compliance to improve documentation accessibility.
--compliant content to improve accessibility across
-documentation.
+- Implemented WCAG-compliant content to improve accessibility across documentation.
 #### Technical Writer
 ##### Unqork | Remote | Nov 2021 - Feb 2024
 - Authored documentation for 26+ features annually, providing detailed guidance for diverse user groups.
@@ -51,7 +49,7 @@ documentation.
 ---
 - Certified Professional Technical Communicator (CPTC™) Foundation | 2021
 - Professional Scrum Master™ I (PSM I) | 2018
-- Bachelor’s Degree in Criminal Justice, San Francisco State University| 2014
+- Bachelor’s Degree in Criminal Justice, San Francisco State University | 2014
 
 ---
 

@@ -14,14 +14,14 @@ Ready to say hello? Reach out to me using one of the methods below.
 }}>
   <div>
     <h2>Email</h2>
-    <a href="mailto:sheleman.m@gmail.com?subject=Regarding Your Portfolio and Resume">sheleman.m@gmail.com</a>>
+    <a href="mailto:sheleman.m@gmail.com?subject=Regarding Your Portfolio and Resume">sheleman.m@gmail.com</a>
   </div>
   <div>
     <h2>LinkedIn</h2>
-    <p>https://www.linkedin.com/in/sheleman/</p>
+    <p><a href="https://www.linkedin.com/in/sheleman/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/sheleman/</a></p>
   </div>
-    <div>
+  <div>
     <h2>GitHub</h2>
-    <p>https://github.com/Tetrabor/</p>
+    <p><a href="https://github.com/Tetrabor/" target="_blank" rel="noopener noreferrer">https://github.com/Tetrabor/</a></p>
   </div>
 </div>

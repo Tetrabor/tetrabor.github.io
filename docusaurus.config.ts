@@ -67,7 +67,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     metadata: [
-      {name: 'keywords', content: 'Michael Sheleman, sheleman, resume, portolfio'},
+      {name: 'keywords', content: 'Michael Sheleman, sheleman, resume, portfolio'},
     ],
     headTags: [
       // Declare some json-ld structured data
