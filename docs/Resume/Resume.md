@@ -1,7 +1,7 @@
 ---
-    title: Resume
-    sidebar_label: Resume
-    sidebar_position: 1
+title: Resume
+sidebar_label: Resume
+sidebar_position: 1
 ---
 
 <div className="text--center">
@@ -10,55 +10,58 @@
 </div>
 
 ---
+
 ### Summary {#summary}
-Accomplished Technical Writer with six years of experience producing clear,
-concise, and user-centric documentation for SaaS platforms. Adept at creating
-API documentation, conceptual guides, and procedural manuals while ensuring
-compliance with modern accessibility standards. Proven ability to streamline
-documentation processes and collaborate effectively with cross-functional teams.
+Technical Writer with over 6 years of experience transforming complex SaaS systems into clean, accessible, and practical documentation. Experienced in building developer docs, API guides, and step-by-step manuals alongside engineering and product teams. Skilled at standardizing doc processes, meeting modern accessibility standards (WCAG), and keeping content clear as platforms scale.
 
 ### Experience {#experience}
 
 ---
-#### Senior Technical Writer
-##### AidenAI | Remote | Dec 2024 - Present
-- Authored documentation for 30+ new software platform features annually.
-- Managed documentation across four developer teams, enhancing content consistency and quality.
-- Led editorial reviews, onboarding, and training for a team of five technical writers.
-- Served as product owner for the technical writing Agile backlog, including sprint planning and retrospectives.
 
-#### Senior Technical Writer
-##### Unqork | Remote | Feb 2024 - Dec 2025
-- Coordinated documentation efforts for four developer teams, streamlining processes and ensuring high standards of accuracy.
-- Implemented WCAG-compliant content to improve accessibility across documentation.
-#### Technical Writer
-##### Unqork | Remote | Nov 2021 - Feb 2024
-- Authored documentation for 26+ features annually, providing detailed guidance for diverse user groups.
-- Integrated analytics tools that boosted content views by 200% within one year.
-- Developed scalable documentation templates, reducing update times by 30%.
+#### AidenAI
+##### Remote | Dec 2024 – Present
 
-#### Freelance Technical Writer
-##### Self-Employed | Remote | Oct 2020 - Nov 2021
-- Developed and maintained a high-traffic game wiki with over 7,000 daily views, establishing a reliable resource for the community.
-- Compiled and translated weekly developer release notes, enhancing global content accessibility.
-- Crafted engaging blogs and marketing content that increased brand visibility and customer engagement for clients in gaming and tech.
+**Senior Technical Writer**
+- Shifted the team’s publishing workflow from traditional CMS tools (Doc360) to a modern **Docs-as-Code** setup directly inside GitHub.
+- Leverage repo-connected **Claude CLI** tools to streamline research, draft feature guides, edit content, and validate technical accuracy.
+- Build custom web components and UI features for internal docs—including a fuzzy search bar, interactive media modules, and an automated glossary highlight system.
+- Develop custom scripts and tooling (such as API export/import utilities) to optimize stack performance and workflows for the technical writing team.
+- Serve as the primary operational liaison between Unqork's Technical Writing Manager and AidenAI writers, managing ticket assignments, sprint planning, and editorial reviews.
 
+#### Unqork
+##### Remote | Nov 2021 – Dec 2025
 
-### Education {#education}
+**Senior Technical Writer** | *Feb 2024 – Dec 2025*
+- Partnered with 4 core development teams to overhaul documentation pipelines and improve technical accuracy across products.
+- Redesigned documentation architecture to meet WCAG standards, making content fully accessible to all users.
+
+**Technical Writer** | *Nov 2021 – Feb 2024*
+- Wrote and published user guides for 26+ major platform features per year tailored to both technical and non-technical audiences.
+- Integrated analytics tracking to identify popular content and gaps, driving a 200% increase in monthly views within one year.
+- Designed reusable content templates for the writer team, reducing doc update and turnaround times by 30%.
+
+#### Self-Employed
+##### Remote | Oct 2020 – Nov 2021
+
+**Freelance Technical Writer**
+- Built and maintained a community game wiki reaching over 7,000 daily visitors, serving as the primary resource for player guides.
+- Translated and curated weekly developer release notes to clearly communicate balance changes and features to a global player base.
+- Wrote tech and gaming blog posts that boosted client visibility and expanded audience reach.
 
 ---
-- Certified Professional Technical Communicator (CPTC™) Foundation | 2021
-- Professional Scrum Master™ I (PSM I) | 2018
-- Bachelor’s Degree in Criminal Justice, San Francisco State University | 2014
+
+### Certifications & Education {#education}
+
+- **Certified Professional Technical Communicator (CPTC™)** | Foundation, 2021
+- **Professional Scrum Master™ I (PSM I)** | 2018
+- **Bachelor of Arts in Criminal Justice** | San Francisco State University, 2014
 
 ---
 
 ### Skills {#skills}
-- **Documentation Lifecycle Management**: End-to-end process from research to publication
-- **Project Management Tools**: JIRA, Confluence, Asana, Trello, Agile
-- **Design & Editing Tools**: Photoshop, PaintShop, Snagit, MadCap Flare, Zendesk, Docusaurus, Doc360, VSCode
-- **Languages**: DITA, XML, HTML, CSS, Markdown, Python (Basic), JavaScript (Basic)
-- **AI**: Machine Learning (Basic), Neural Networks (Basic), Implementation (Basic)
-- **Version Control**: Git, Proprietary software systems
-- Stakeholder Communication & Time Management
 
+- **Documentation & Methodologies**: Docs-as-Code, End-to-End Doc Lifecycle, API Documentation, Accessibility (WCAG), Agile/Scrum
+- **Tools & Platforms**: Docusaurus, GitHub, JIRA, Confluence, MadCap Flare, Zendesk, Doc360, VSCode
+- **Languages & Architecture**: Markdown, HTML, CSS, Web Components, XML, DITA, JavaScript, Python
+- **AI & Automation**: Claude CLI, Gemini Pro, Google Vertex, API Integrations, Antigravity IDE
+- **Design & Media**: Snagit, Photoshop, PaintShop
