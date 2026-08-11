@@ -11,13 +11,11 @@ sidebar_position: 1
 
 ---
 
----
 ### Summary {#summary}
 Technical Writer with 6+ years of experience documenting SaaS platforms, developer tools, and REST APIs. Skilled in managing docs across multiple engineering teams, building scalable templates, implementing WCAG accessibility standards, and leveraging analytics to measure and grow content reach.
 
 ### Experience {#experience}
 
----
 #### Senior Technical Writer
 ##### AidenAI | Remote | Dec 2024 - Present
 - Author and maintain user guides, API documentation, and release notes for 30+ software features annually.
@@ -42,15 +40,11 @@ Technical Writer with 6+ years of experience documenting SaaS platforms, develop
 - Translated weekly developer release notes into accessible documentation for international user bases.
 - Wrote technical articles and blog posts to drive customer engagement for tech and gaming clients.
 
----
-
 ### Education & Certifications {#education}
 
 - **Certified Professional Technical Communicator (CPTC™) Foundation** | 2021
 - **Professional Scrum Master™ I (PSM I)** | 2018
 - **Bachelor’s Degree in Criminal Justice** | San Francisco State University, 2014
-
----
 
 ### Skills {#skills}
 - **Documentation**: API Documentation, Release Notes, User Manuals, Information Architecture, WCAG Accessibility
