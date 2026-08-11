@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -6,8 +6,8 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
-  
+  const { siteConfig } = useDocusaurusContext();
+
   const services = [
     {
       num: '01',
@@ -36,8 +36,8 @@ export default function Home(): ReactNode {
     },
     {
       num: '06',
-      title: 'Freelance Technical Blogging',
-      desc: 'Writing technology and gaming blog posts, community wikis, and developer release notes to expand audience reach.',
+      title: 'AI Implementation',
+      desc: 'Designing AI Markdown templates for creating and managing platform documentation.',
     },
   ];
 
@@ -45,7 +45,7 @@ export default function Home(): ReactNode {
     <Layout
       title={`Michael Sheleman's Portfolio & Resume`}
       description="Discover Michael Sheleman's resume and previous works.">
-      
+
       <main className={styles.mainContainer}>
         {/* Hero Section */}
         <section className={styles.heroSection}>
@@ -63,10 +63,10 @@ export default function Home(): ReactNode {
                 </p>
               </div>
               <div className={styles.heroImageWrapper}>
-                <img 
-                  src="/img/hero_labs.jpg" 
-                  alt="Michael Sheleman" 
-                  className={styles.heroImage} 
+                <img
+                  src="/img/hero_labs.jpg"
+                  alt="Michael Sheleman"
+                  className={styles.heroImage}
                 />
               </div>
             </div>
@@ -78,9 +78,9 @@ export default function Home(): ReactNode {
           <div className={styles.container}>
             <div className={styles.aboutGrid}>
               <div className={styles.aboutImageWrapper}>
-                <img 
-                  src="/img/about_keyboard.jpg" 
-                  alt="Mechanical Keyboard Detail" 
+                <img
+                  src="/img/about_keyboard.jpg"
+                  alt="Mechanical Keyboard Detail"
                   className={styles.aboutImage}
                 />
               </div>
@@ -94,7 +94,7 @@ export default function Home(): ReactNode {
                 <p className={styles.aboutDesc}>
                   Michael Sheleman positions himself as a high-level technical communications expert who bridges the gap between complex engineering and user accessibility through AI-integrated documentation and modern development workflows.
                 </p>
-                
+
                 <Heading as="h3" className={styles.valuesTitle}>
                   Core Values
                 </Heading>
