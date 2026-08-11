@@ -1,67 +1,57 @@
 ---
-title: Resume
-sidebar_label: Resume
-sidebar_position: 1
+    title: Resume
+    sidebar_label: Resume
+    sidebar_position: 1
 ---
 
-<div className="text--center">
+<div class="text--center">
 # Michael Sheleman
 (408) 607-2116 - sheleman.m@gmail.com - https://www.linkedin.com/in/sheleman/
 </div>
 
 ---
-
 ### Summary {#summary}
-Technical Writer with over 6 years of experience transforming complex SaaS systems into clean, accessible, and practical documentation. Experienced in building developer docs, API guides, and step-by-step manuals alongside engineering and product teams. Skilled at standardizing doc processes, meeting modern accessibility standards (WCAG), and keeping content clear as platforms scale.
+Technical Writer with 6+ years of experience documenting SaaS platforms, developer tools, and REST APIs. Skilled in managing docs across multiple engineering teams, building scalable templates, implementing WCAG accessibility standards, and leveraging analytics to measure and grow content reach.
 
 ### Experience {#experience}
 
 ---
+#### Senior Technical Writer
+##### AidenAI | Remote | Dec 2024 - Present
+- Author and maintain user guides, API documentation, and release notes for 30+ software features annually.
+- Direct documentation strategy across 4 engineering teams to keep content accurate and up to date.
+- Onboard, train, and provide editorial review for a team of 5 technical writers.
+- Own the technical writing backlog, leading sprint planning, task prioritization, and retrospectives.
 
-#### AidenAI
-##### Remote | Dec 2024 – Present
+#### Senior Technical Writer
+##### Unqork | Remote | Feb 2024 - Dec 2025
+- Led documentation efforts for 4 developer teams, standardizing documentation structures across complex enterprise features.
+- Implemented WCAG accessibility guidelines across all technical content to meet enterprise compliance standards.
 
-**Senior Technical Writer**
-- Shifted the team’s publishing workflow from traditional CMS tools (Doc360) to a modern **Docs-as-Code** setup directly inside GitHub.
-- Leverage repo-connected **Claude CLI** tools to streamline research, draft feature guides, edit content, and validate technical accuracy.
-- Build custom web components and UI features for internal docs—including a fuzzy search bar, interactive media modules, and an automated glossary highlight system.
-- Develop custom scripts and tooling (such as API export/import utilities) to optimize stack performance and workflows for the technical writing team.
-- Serve as the primary operational liaison between Unqork's Technical Writing Manager and AidenAI writers, managing ticket assignments, sprint planning, and editorial reviews.
+#### Technical Writer
+##### Unqork | Remote | Nov 2021 - Feb 2024
+- Authored comprehensive documentation for 26+ features per year across diverse product modules.
+- Integrated web analytics into doc platforms, identifying top search terms and driving a 200% increase in page views within 12 months.
+- Designed reusable documentation templates, cutting team content update times by 30%.
 
-#### Unqork
-##### Remote | Nov 2021 – Dec 2025
-
-**Senior Technical Writer** | *Feb 2024 – Dec 2025*
-- Partnered with 4 core development teams to overhaul documentation pipelines and improve technical accuracy across products.
-- Redesigned documentation architecture to meet WCAG standards, making content fully accessible to all users.
-
-**Technical Writer** | *Nov 2021 – Feb 2024*
-- Wrote and published user guides for 26+ major platform features per year tailored to both technical and non-technical audiences.
-- Integrated analytics tracking to identify popular content and gaps, driving a 200% increase in monthly views within one year.
-- Designed reusable content templates for the writer team, reducing doc update and turnaround times by 30%.
-
-#### Self-Employed
-##### Remote | Oct 2020 – Nov 2021
-
-**Freelance Technical Writer**
-- Built and maintained a community game wiki reaching over 7,000 daily visitors, serving as the primary resource for player guides.
-- Translated and curated weekly developer release notes to clearly communicate balance changes and features to a global player base.
-- Wrote tech and gaming blog posts that boosted client visibility and expanded audience reach.
+#### Freelance Technical Writer
+##### Self-Employed | Remote | Oct 2020 - Nov 2021
+- Built and maintained a gaming wiki scaling to over 7,000 daily active views.
+- Translated weekly developer release notes into accessible documentation for international user bases.
+- Wrote technical articles and blog posts to drive customer engagement for tech and gaming clients.
 
 ---
 
-### Certifications & Education {#education}
+### Education & Certifications {#education}
 
-- **Certified Professional Technical Communicator (CPTC™)** | Foundation, 2021
+- **Certified Professional Technical Communicator (CPTC™) Foundation** | 2021
 - **Professional Scrum Master™ I (PSM I)** | 2018
-- **Bachelor of Arts in Criminal Justice** | San Francisco State University, 2014
+- **Bachelor’s Degree in Criminal Justice** | San Francisco State University, 2014
 
 ---
 
 ### Skills {#skills}
-
-- **Documentation & Methodologies**: Docs-as-Code, End-to-End Doc Lifecycle, API Documentation, Accessibility (WCAG), Agile/Scrum
-- **Tools & Platforms**: Docusaurus, GitHub, JIRA, Confluence, MadCap Flare, Zendesk, Doc360, VSCode
-- **Languages & Architecture**: Markdown, HTML, CSS, Web Components, XML, DITA, JavaScript, Python
-- **AI & Automation**: Claude CLI, Gemini Pro, Google Vertex, API Integrations, Antigravity IDE
-- **Design & Media**: Snagit, Photoshop, PaintShop
+- **Documentation**: API Documentation, Release Notes, User Manuals, Information Architecture, WCAG Accessibility
+- **Tools & Platforms**: Docusaurus, Zendesk, MadCap Flare, Doc360, Confluence, Jira, Snagit, VS Code
+- **Languages & Frameworks**: Markdown, HTML, CSS, XML, DITA, Python (Basic), JavaScript (Basic)
+- **Workflow & AI**: Git Version Control, Agile/Scrum, Machine Learning Concepts
