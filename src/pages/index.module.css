@@ -1,54 +1,349 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* Color and Spacing Variables mapped to Docusaurus themes */
+.mainContainer {
+  --color-primary: #5a6e36;
+  --color-primary-dark: #46572a;
+  --color-secondary: #212f1b;
+  
+  --color-bg-light: #f9f9f9;
+  --color-bg-card: #ffffff;
+  --color-text-main: #242526;
+  --color-text-muted: #555555;
+  --color-border: #e0e0e0;
+  
+  --font-mono: 'Roboto Mono', monospace;
+  
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  font-family: 'Roboto', sans-serif;
+}
 
-.heroBanner {
-  display: flex;
+/* Enable Dark Mode overrides */
+:global([data-theme='dark']) .mainContainer {
+  --color-bg-light: #121212;
+  --color-bg-card: #1e1e1e;
+  --color-text-main: #e3e3e3;
+  --color-text-muted: #aaaaaa;
+  --color-border: #333333;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.monoText {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.accentColor {
+  color: var(--color-primary);
+}
+
+/* Hero Section */
+.heroSection {
+  background-color: var(--color-bg-card);
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+:global([data-theme='dark']) .heroSection {
+  background-color: #1a1a1a;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
   align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
 }
 
 .heroContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding-right: var(--space-md);
 }
 
-.heroText {
-  flex: 1;
-  min-width: 300px;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  text-align: left;
+.heroEyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--space-xs);
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-main);
+}
+
+.heroDesc {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  max-width: 90%;
+}
+
+.heroImageWrapper {
+  position: relative;
+}
+
+.heroImageWrapper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  z-index: 0;
+  border-radius: 4px;
 }
 
 .heroImage {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-  display: flex;
-  justify-content: center;
-  padding: 0 6rem 0 0;
-}
-
-.image {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   height: auto;
-  border-radius: 1rem; /* optional styling */
+  display: block;
+  object-fit: cover;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 0;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner, .heroImage {
-    padding: 2rem;
+/* About Section */
+.aboutSection {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.aboutImageWrapper {
+  border-right: 4px solid var(--color-primary);
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.aboutTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-main);
+}
+
+.aboutDesc {
+  color: var(--color-text-muted);
+}
+
+.valuesTitle {
+  margin-top: var(--space-md);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.valuesList {
+  list-style: none;
+  margin-top: var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  padding-left: 0;
+}
+
+.valuesList li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+.valuesList li::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Services Section */
+.servicesSection {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-bg-card);
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+}
+
+.servicesTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-main);
+}
+
+.servicesDesc {
+  color: var(--color-text-muted);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.serviceCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-primary);
+}
+
+:global([data-theme='dark']) .serviceCard:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.serviceNumber {
+  color: var(--color-border);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+}
+
+.serviceCard:hover .serviceNumber {
+  color: var(--color-primary);
+}
+
+.cardTitle {
+  margin-bottom: var(--space-xs);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.cardDesc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Philosophy Section */
+.philosophySection {
+  position: relative;
+  padding: var(--space-xl) 0;
+  color: #ffffff;
+  z-index: 1;
+  background-image: url('/img/philosophy_bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.philosophyBgOverlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(36, 37, 38, 0.88);
+  z-index: -1;
+}
+
+.philosophyContainer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.philosophyEyebrow {
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.philosophyTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: #ffffff;
+}
+
+.philosophyDesc {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .heroGrid, .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .heroContent {
+    padding-right: 0;
+    order: 2;
+  }
+  .heroImageWrapper {
+    order: 1;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+  .aboutImageWrapper {
+    order: 2;
+    margin-top: 2rem;
+  }
+  .aboutContent {
+    order: 1;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (max-width: 768px) {
+  .valuesList {
+    grid-template-columns: 1fr;
+  }
 }
